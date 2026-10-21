@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 import projects from "@data/projects.json";
+import caseStudies from "@data/caseStudies.json";
 import styles from "@styles/projects.module.css";
 import useReveal from "@hooks/useReveal";
 
@@ -13,7 +15,7 @@ function Projects() {
                 </p>
                 <h1 id={styles.title}>Projects</h1>
                 <p id={styles.subtitle}>
-                    Case studies, hackathons and interactive systems I've designed and built.
+                    Welcome to my world!
                 </p>
             </section>
 
@@ -22,26 +24,49 @@ function Projects() {
                 className={`section ${styles.projects} ${listVisible ? styles.visible : ""}`}
             >
                 <ul id={styles.project_list} aria-label="Projects">
-                    {projects.map((project, index) => (
+                    {projects.map((project, index) => {
+                        const hasCaseStudy = Boolean(caseStudies[project.id]);
+
+                        return (
                         <li key={project.id} style={{ "--i": index }}>
-                            <article className={`${styles.project_card} glass_bg`}>
+                            <article className={`${styles.project_card} ${hasCaseStudy ? styles.ready : ""} glass_bg`}>
                                 <div className={styles.thumbnail} aria-hidden="true">
-                                    <div className={`${styles.planet} ${styles[project.planet]}`} />
+                                    {project.thumbnail ? (
+                                        <img src={project.thumbnail} alt="" />
+                                    ) : (
+                                        <div className={`${styles.planet} ${styles[project.planet]}`} />
+                                    )}
                                 </div>
                                 <div className={styles.card_body}>
                                     <p className={styles.period}>{project.period}</p>
-                                    <h2>{project.name}</h2>
+                                    <h2>
+                                        {hasCaseStudy ? (
+                                            // the link covers the whole card (see .card_link::after)
+                                            <Link to={`/projects/${project.id}`} className={styles.card_link}>
+                                                {project.name}
+                                            </Link>
+                                        ) : (
+                                            project.name
+                                        )}
+                                    </h2>
                                     <p className={styles.blurb}>{project.blurb}</p>
                                     <ul className={styles.tags} aria-label="Tags">
                                         {project.tags.map((tag) => (
                                             <li key={tag}>{tag}</li>
                                         ))}
                                     </ul>
-                                    <span className={styles.cta}>Case study landing soon</span>
+                                    <span className={styles.cta}>
+                                        {hasCaseStudy ? (
+                                            <>Read the case study <span aria-hidden="true">→</span></>
+                                        ) : (
+                                            "Case study landing soon"
+                                        )}
+                                    </span>
                                 </div>
                             </article>
                         </li>
-                    ))}
+                        );
+                    })}
                 </ul>
             </section>
         </div>

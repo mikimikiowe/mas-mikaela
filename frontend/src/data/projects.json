@@ -1,19 +1,21 @@
 [
     {
-        "id": "project-one",
-        "name": "Project One",
-        "tags": ["UX/UI", "Case Study", "Placeholder"],
+        "id": "whats-new-at-sheridan",
+        "name": "What's New at Sheridan",
+        "tags": ["Information Architecture", "UX/UI", "Web Development"],
         "period": "2026",
-        "blurb": "A short one or two sentence summary of the project will go here.",
-        "planet": "planet_pink"
+        "blurb": "Every campus event from four separate organizers, gathered into one calendar Sheridan students can filter in seconds.",
+        "planet": "planet_pink",
+        "thumbnail": "/assets/whatsnewsheridanprojects.svg"
     },
     {
-        "id": "project-two",
-        "name": "Project Two",
-        "tags": ["Interactive System", "Prototyping", "Placeholder"],
+        "id": "retro-radio-speaker",
+        "name": "Retro Radio + Speaker",
+        "tags": ["Information Design", "Illustration", "Infographic"],
         "period": "2026",
-        "blurb": "A short one or two sentence summary of the project will go here.",
-        "planet": "planet_lilac"
+        "blurb": "An illustrated guide to the PRUNUS J-150 that labels its parts and gets a glamper listening in five simple steps.",
+        "planet": "planet_lilac",
+        "thumbnail": "/assets/retroradioprojects.svg"
     },
     {
         "id": "project-three",

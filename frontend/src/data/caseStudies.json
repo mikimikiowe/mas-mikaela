@@ -1,0 +1,393 @@
+{
+    "whats-new-at-sheridan": {
+        "eyebrow": "Case study · Information architecture",
+        "title": "What's New at Sheridan",
+        "lede": "What's New at Sheridan brings every campus event from the SSU, Sheridan Clubs, Sheridan EDGE and Sheridan College into one consistent, filterable calendar, so Sheridan students can find an event that matters to them in seconds instead of checking four separate websites.",
+        "facts": [
+            { "label": "Role", "value": "UX Researcher and Developer" },
+            { "label": "Timeline", "value": "5 weeks · Sept – Oct 2026" },
+            { "label": "Built with", "value": "HTML, CSS, JavaScript, Node.js API, BeautifulSoup, Selenium, Claude, Vercel" }
+        ],
+        "highlights": [
+            { "value": "4 → 1", "label": "organizer sites merged into one calendar" },
+            { "value": "4", "label": "ways to narrow: date, campus, organizer, time of day" },
+            { "value": "1 click", "label": "to add an event, or the whole week, to a calendar" },
+            { "value": "AA", "label": "colour contrast checked against WCAG 2.2" }
+        ],
+        "preview": {
+            "type": "laptop",
+            "label": "Live site",
+            "url": "https://events-sheridan-frontend1.vercel.app/",
+            "title": "Live preview of the What's New at Sheridan website"
+        },
+        "sections": [
+            {
+                "id": "problem",
+                "tier": "details",
+                "eyebrow": "The problem",
+                "title": "Four websites, none of them have the full picture",
+                "blocks": [
+                    {
+                        "type": "quote",
+                        "text": "How might we reduce the effort it takes for Sheridan students to discover campus events that are relevant to them?"
+                    },
+                    {
+                        "type": "text",
+                        "text": "Sheridan students who want to get involved on campus have to check multiple sites to find out what's going on at the SSU, Sheridan Clubs, Sheridan EDGE and Sheridan College. Each one has a different layout and none of them shows the full picture, so finding events takes time and it's easy to miss the ones that would have mattered."
+                    }
+                ]
+            },
+            {
+                "id": "solution",
+                "tier": "details",
+                "eyebrow": "The solution",
+                "title": "One place, one format, filtered your way",
+                "blocks": [
+                    {
+                        "type": "text",
+                        "text": "We saw an opportunity to bring these sources together. The site pulls live event data from each organizer through an API we built by scraping their event pages, displays everything in one consistent format, and presents it in a single place. Students can narrow events by date, campus, organizer and time of day, see what's on this week at a glance, and add events straight to their calendar."
+                    }
+                ]
+            },
+            {
+                "id": "audit",
+                "tier": "details",
+                "eyebrow": "IA · Content audit",
+                "title": "Starting with what already existed",
+                "blocks": [
+                    {
+                        "type": "text",
+                        "text": "Before designing anything, we mapped where each organizer published events and what kind of events they ran. Every source lived on a different platform, with its own layout and its own way of describing dates, places and times. There was no shared structure to build on, so we had to define one."
+                    },
+                    {
+                        "type": "table",
+                        "columns": ["Organizer", "What they post", "Where it lived"],
+                        "rows": [
+                            ["SSU", "Socials, trips and free food", "The SSU's own website"],
+                            ["Sheridan Clubs", "Meetups, workshops and parties", "Campus Labs Engage"],
+                            ["Sheridan EDGE", "Startup programs and mentors", "Eventbrite"],
+                            ["Sheridan College", "Open houses and info sessions", "sheridancollege.ca"]
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "model",
+                "tier": "details",
+                "eyebrow": "IA · Content model",
+                "title": "One shape for every event",
+                "blocks": [
+                    {
+                        "type": "text",
+                        "text": "Whatever the source, every event is normalized into the same set of fields. This shared model is what makes the site feel like one calendar rather than four feeds stitched together, and it is what the filters and layouts are built on."
+                    },
+                    {
+                        "type": "fields",
+                        "items": [
+                            { "name": "Title", "note": "As the organizer wrote it" },
+                            { "name": "Organizer", "note": "SSU, Clubs, EDGE or Sheridan" },
+                            { "name": "Dates", "note": "Every occurrence of a repeating event" },
+                            { "name": "Time", "note": "Start and end, in Toronto time" },
+                            { "name": "Campus", "note": "Davis, Trafalgar, HMC or Online" },
+                            { "name": "Image", "note": "Falls back to a coloured organizer block" },
+                            { "name": "Summary", "note": "A short excerpt for scanning" },
+                            { "name": "Source link", "note": "Back to the organizer's own page" },
+                            { "name": "Calendar links", "note": "Google Calendar and .ics file" }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "facets",
+                "tier": "details",
+                "eyebrow": "IA · Organization scheme",
+                "title": "Organized around the questions students ask",
+                "blocks": [
+                    {
+                        "type": "text",
+                        "text": "Students don't look for events by data source. They ask when, where and who. Each question became a facet that can be combined with the others, so \"What's on this evening at Trafalgar?\" is two clicks away."
+                    },
+                    {
+                        "type": "facets",
+                        "items": [
+                            {
+                                "name": "When",
+                                "question": "What's on today? What about this week?",
+                                "values": ["All", "Today", "This week", "This month", "Morning (before noon)", "Afternoon (noon to 5 PM)", "Evening (after 5 PM)"]
+                            },
+                            {
+                                "name": "Where",
+                                "question": "What's happening at my campus?",
+                                "values": ["Davis (Brampton)", "Trafalgar (Oakville)", "HMC (Mississauga)", "Online"]
+                            },
+                            {
+                                "name": "Who",
+                                "question": "What is my club or the SSU running?",
+                                "values": ["SSU", "Sheridan Clubs", "EDGE", "Sheridan College"]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "structure",
+                "tier": "details",
+                "eyebrow": "IA · Page structure",
+                "title": "From a glance to the exact event",
+                "blocks": [
+                    {
+                        "type": "text",
+                        "text": "The page itself is ordered like an inverted pyramid. The most useful answer, how much is on this week, sits in the very first line, and each section below narrows from a broad overview to the specific event a student is looking for."
+                    },
+                    {
+                        "type": "flow",
+                        "steps": [
+                            { "name": "Top bar", "note": "How many events are on this week, across which campuses" },
+                            { "name": "Hero", "note": "What the site is, with this week's posters" },
+                            { "name": "This week", "note": "The week at a glance, plus one button to add it all to a calendar" },
+                            { "name": "Organizers", "note": "Browse by who is running the event" },
+                            { "name": "All events", "note": "Every event, narrowed by view, organizer, campus and time of day" },
+                            { "name": "Event details", "note": "Full description, location and calendar links" }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "navigation",
+                "tier": "details",
+                "eyebrow": "IA · Navigation & labelling",
+                "title": "Labels in students' own words",
+                "blocks": [
+                    {
+                        "type": "list",
+                        "items": [
+                            {
+                                "title": "Navigation mirrors the facets",
+                                "text": "The main menu, This week · Organizers · Events · Campuses, maps directly to the ways students narrow events, so the menu doubles as a map of the content."
+                            },
+                            {
+                                "title": "Every entry point lands on a filtered view",
+                                "text": "Choosing an organizer or campus anywhere on the page, including the footer, jumps to the event list with that filter already applied."
+                            },
+                            {
+                                "title": "Plain, specific labels",
+                                "text": "\"Evening (after 5 PM)\" instead of a time code, and campus names paired with their city, so nobody has to guess what a label means."
+                            },
+                            {
+                                "title": "Accessible by structure",
+                                "text": "A skip link straight to all events, colours checked against WCAG 2.2 AA, and event details that return focus where you left off."
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "build",
+                "tier": "background",
+                "eyebrow": "Behind the scenes",
+                "title": "How the data gets there",
+                "blocks": [
+                    {
+                        "type": "text",
+                        "text": "Scrapers built with BeautifulSoup and Selenium collect events from each organizer's page, and a small API serves them in the shared format. The front end asks it for exactly the slice it needs, so every view and filter maps to a simple request."
+                    },
+                    {
+                        "type": "code",
+                        "lines": [
+                            "/api/events",
+                            "/api/events/today",
+                            "/api/events/week",
+                            "/api/events/month/2026-10",
+                            "/api/events/week?source=clubs&location=hmc&time=evening"
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "next",
+                "tier": "background",
+                "eyebrow": "What's next",
+                "title": "Where it could go from here",
+                "blocks": [
+                    {
+                        "type": "list",
+                        "items": [
+                            {
+                                "title": "Test with students on every campus",
+                                "text": "Watch how students from Davis, Trafalgar and HMC actually search, and refine the facets and labels around it."
+                            },
+                            {
+                                "title": "Automate the scraping",
+                                "text": "Run the scrapers on a schedule so new events show up, and changed or cancelled ones update, without anyone having to refresh the data by hand."
+                            },
+                            {
+                                "title": "Remember a student's filters",
+                                "text": "Let students keep their campus and favourite organizers so the page opens on what matters to them."
+                            },
+                            {
+                                "title": "Bring in more organizers",
+                                "text": "The shared content model means a new source only needs a scraper, not a redesign."
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "retro-radio-speaker": {
+        "eyebrow": "Case study · Information design",
+        "title": "Retro Radio + Speaker",
+        "lede": "Retro Radio + Speaker is an illustrated infographic that labels the main parts of the PRUNUS J-150, a vintage-style radio packed with modern features, and walks new owners through using it in five simple steps, so a glamper can get music or a station playing at camp without opening a manual.",
+        "facts": [
+            { "label": "Role", "value": "UX Researcher, Illustrator, Designer" },
+            { "label": "Timeline", "value": "1 month · Sept 2026" },
+            { "label": "Made with", "value": "Procreate, Figma, Illustrator" }
+        ],
+        "highlights": [
+            { "value": "11", "label": "parts labelled on one diagram" },
+            { "value": "5", "label": "steps from switched off to listening" },
+            { "value": "4", "label": "listening modes: Bluetooth, FM, AM and SW" },
+            { "value": "3", "label": "ways to power it: solar, battery and DC 5V" }
+        ],
+        "preview": {
+            "type": "poster",
+            "label": "Infographic",
+            "src": "/assets/infographic_web.jpg",
+            "fullSrc": "/assets/infographic.png",
+            "alt": "Infographic titled Retro Radio + Speaker. A line drawing of the PRUNUS J-150 radio labels eleven parts: antenna, handle, phone stand, solar panel, battery entrance, Bluetooth controls, ports, tuning knob, mode switch, on-off knob and speaker. Below it, five illustrated steps show how to turn it on, connect Bluetooth, switch to radio, tune a station and extend the antenna."
+        },
+        "sections": [
+            {
+                "id": "product",
+                "tier": "details",
+                "eyebrow": "The product",
+                "title": "Vintage on the outside, modern on the inside",
+                "blocks": [
+                    {
+                        "type": "text",
+                        "text": "The PRUNUS J-150 looks like an old-school transistor radio, with its wood-grain body and gold grille, but it hides modern features too: Bluetooth, a solar panel, a rechargeable battery, and USB and TF card playback. I chose it because I love how it mixes vintage style with new tech, and because there's a lot going on that isn't obvious at first glance."
+                    }
+                ]
+            },
+            {
+                "id": "persona",
+                "tier": "details",
+                "eyebrow": "Research · Persona & testing",
+                "title": "Designing for a glamper",
+                "blocks": [
+                    {
+                        "type": "text",
+                        "text": "My research centred on a persona who goes glamping: camping, with a few comforts brought along. For someone setting up a radio at a campsite, the features that matter most are the ones that work away from a wall outlet, so the solar panel, battery, Bluetooth and antenna all earn a clear place on the diagram."
+                    },
+                    {
+                        "type": "text",
+                        "text": "The five steps were tested with new users and iterated on based on where they got stuck, so the final instructions reflect how first-time owners actually use the radio."
+                    }
+                ]
+            },
+            {
+                "id": "structure",
+                "tier": "details",
+                "eyebrow": "IA · Structure",
+                "title": "Two questions, in reading order",
+                "blocks": [
+                    {
+                        "type": "text",
+                        "text": "The infographic answers the two questions a new owner has, in the order they ask them: what am I looking at, and how do I use it? The layout follows the path a reader's eye already takes, from the title at the top left, to the labelled diagram, to a row of steps read left to right."
+                    },
+                    {
+                        "type": "flow",
+                        "steps": [
+                            { "name": "Title", "note": "Retro Radio + Speaker: what this is about" },
+                            { "name": "Labelled diagram", "note": "What each part is called and where to find it" },
+                            { "name": "Steps 1 to 5", "note": "How to go from switched off to listening" }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "parts",
+                "tier": "details",
+                "eyebrow": "IA · Labelling",
+                "title": "Eleven parts, one diagram",
+                "blocks": [
+                    {
+                        "type": "text",
+                        "text": "Every label sits at the end of a leader line pointing to its part, and the labels stack in a single column so they read top to bottom like a list. Parts with options, like the ports and the mode switch, list those options underneath instead of getting labels of their own."
+                    },
+                    {
+                        "type": "fields",
+                        "items": [
+                            { "name": "Antenna", "note": "Extends for clearer radio reception" },
+                            { "name": "Handle", "note": "For carrying it out to camp" },
+                            { "name": "Phone stand", "note": "Holds a phone while it streams" },
+                            { "name": "Solar panel", "note": "Charges the battery from sunlight" },
+                            { "name": "Battery entrance", "note": "Where the rechargeable battery goes" },
+                            { "name": "Bluetooth controls", "note": "Previous, pause and next" },
+                            { "name": "Ports", "note": "USB, TF card and DC 5V in" },
+                            { "name": "Tuning knob", "note": "Finds a radio station" },
+                            { "name": "Mode switch", "note": "Bluetooth music, FM, AM or SW" },
+                            { "name": "ON-OFF knob", "note": "Turns it on and sets the volume" },
+                            { "name": "Speaker", "note": "Behind the gold grille" }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "steps",
+                "tier": "details",
+                "eyebrow": "IA · Instructions",
+                "title": "Five steps, one action each",
+                "blocks": [
+                    {
+                        "type": "text",
+                        "text": "Each step zooms in on exactly the control it mentions, with one short instruction underneath, so the picture shows where and the words say what to do."
+                    },
+                    {
+                        "type": "list",
+                        "items": [
+                            { "title": "1. Turn on", "text": "Turn the ON-OFF knob slightly to the right." },
+                            { "title": "2. Bluetooth", "text": "Slide the mode switch all the way to the left, then pair it with your phone or another device." },
+                            { "title": "3. Radio", "text": "Slide the mode switch to FM or AM." },
+                            { "title": "4. Tuning", "text": "Turn the tuning knob left and right until you find the station you want." },
+                            { "title": "5. Antenna", "text": "Extend the antenna for clearer radio audio." }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "visuals",
+                "tier": "details",
+                "eyebrow": "Design choices",
+                "title": "Line art with a little warmth",
+                "blocks": [
+                    {
+                        "type": "text",
+                        "text": "The radio is drawn in clean black line art so every control reads clearly, even in the small step close-ups. Soft peach and sage squares add warmth and a hint of the outdoors without competing with the labels."
+                    }
+                ]
+            },
+            {
+                "id": "next",
+                "tier": "background",
+                "eyebrow": "What's next",
+                "title": "Where it could go from here",
+                "blocks": [
+                    {
+                        "type": "list",
+                        "items": [
+                            {
+                                "title": "Make it interactive",
+                                "text": "Tap a part on the diagram to learn more about it, or follow the steps one at a time."
+                            },
+                            {
+                                "title": "A pocket card for camp",
+                                "text": "A small, printable version of the five steps that can live with the radio."
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

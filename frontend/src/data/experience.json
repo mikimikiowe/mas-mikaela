@@ -18,15 +18,15 @@
         "img": "/assets/wbt.png"
     },
     {
-        "company": "Digita11y Accessible",
-        "title": "Junior Interactive Designer",
-        "period": "July 2024 - Present",
-        "img": "/assets/digita11y_accessible.png"
-    },
-    {
         "company": "#a11yTO",
         "title": "Volunteer",
-        "period": "April 2024 - Present",
+        "period": "Apr 2024 - Present",
         "img": "/assets/a11yto.png"
+    },
+    {
+        "company": "Digita11y Accessible",
+        "title": "Junior Interactive Designer",
+        "period": "Jul 2024 - Dec 2026",
+        "img": "/assets/digita11y_accessible.png"
     }
 ]
