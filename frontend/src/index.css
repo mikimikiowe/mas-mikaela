@@ -1,7 +1,16 @@
 :root {
-  --bg-primary: #322D50;
-  --bg-secondary: rgba(8, 6, 46, 0.2);
-  --font-primary: #C4C3D8;
+  --bg-primary: #4F3F8E;
+  --bg-deep: #2E2360;
+  --bg-secondary: rgba(255, 255, 255, 0.08);
+  --bg-gradient:
+    radial-gradient(ellipse 70% 50% at 15% 0%, rgba(176, 148, 245, 0.55), transparent 70%),
+    radial-gradient(ellipse 50% 40% at 95% 25%, rgba(228, 150, 220, 0.35), transparent 70%),
+    linear-gradient(180deg, #5E4CA6 0%, #4F3F8E 55%, #3F3178 100%);
+  --font-primary: #F6F2FF;
+  --font-muted: #DCD3F7;
+  --accent-lilac: #CDB8FF;
+  --accent-pink: #FFC6EC;
+  --border-soft: rgba(255, 255, 255, 0.28);
 
   --primary-font-family: 'Handlee', cursive;
   --secondary-font-family: 'Comic Neue', cursive;
@@ -51,7 +60,8 @@ body::before {
 }
 
 body {
-  background: var(--bg-primary);
+  min-height: 100vh;
+  background: var(--bg-gradient), var(--bg-primary);
   color: var(--font-primary);
   font-family: var(--primary-font-family);
   overflow-x: hidden;
@@ -81,18 +91,25 @@ li {
   padding: 0;
 }
 
+.starfield {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
 .glass_bg {
   /* backdrop-filter: blur(10px) saturate(100%);
   -webkit-backdrop-filter: blur(10px) saturate(100%); */
   box-shadow: 0 4px 30px rgba(255, 255, 255, 0.05);
   background-color: var(--bg-secondary);
-  border: 1px solid rgba(209, 213, 219, 0.2);
+  border: 1px solid var(--border-soft);
 }
 
 
 .section {
   padding: 32px var(--inline-padding);
-  width: clamp(var(--min-width), 100%, var(--max-width));
+  width: min(100%, var(--max-width));
   align-self: center;
 }
 

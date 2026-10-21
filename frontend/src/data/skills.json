@@ -1,34 +1,34 @@
 [
     {
-        "img": "assets/figma.png",
+        "img": "/assets/figma.png",
         "name": "Figma"
     },
     {
-        "img": "assets/touchdesigner.png",
+        "img": "/assets/touchdesigner.png",
         "name": "TouchDesigner"
     },
     {
-        "img": "assets/cinema4d.png",
+        "img": "/assets/cinema4d.png",
         "name": "Cinema4D"
     },
     {
-        "img": "assets/protopie.png",
+        "img": "/assets/protopie.png",
         "name": "ProtoPie"
     },
     {
-        "img": "assets/illustrator.png",
+        "img": "/assets/illustrator.png",
         "name": "Illustrator"
     },
     {
-        "img": "assets/after_effects.png",
+        "img": "/assets/after_effects.png",
         "name": "After Effects"
     },
     {
-        "img": "assets/indesign.png",
+        "img": "/assets/indesign.png",
         "name": "InDesign"
     },
     {
-        "img": "assets/photoshop.png",
+        "img": "/assets/photoshop.png",
         "name": "Photoshop"
     }
 ]

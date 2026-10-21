@@ -1,37 +1,26 @@
 [
     {
-        "name": "A11yson",
-        "tags": "Hackathon project • UX/UI • Cognitive-first Accessibility Engine • Gemini AI",
+        "id": "project-one",
+        "name": "Project One",
+        "tags": ["UX/UI", "Case Study", "Placeholder"],
         "period": "2026",
-        "img": "/assets/a11ysonprojects.svg",
-        "link": "https://devpost.com/software/a11yson"
+        "blurb": "A short one or two sentence summary of the project will go here.",
+        "planet": "planet_pink"
     },
     {
-        "name": "Haptic Zone",
-        "tags": "Interactive System • TouchDesigner • Proximity-Based Interaction • Audiovisual Feedback",
+        "id": "project-two",
+        "name": "Project Two",
+        "tags": ["Interactive System", "Prototyping", "Placeholder"],
         "period": "2026",
-        "img": "/assets/hapticzoneprojects.svg",
-        "link": "/HapticZone.pdf"
+        "blurb": "A short one or two sentence summary of the project will go here.",
+        "planet": "planet_lilac"
     },
     {
-        "name": "UX Patterns",
-        "tags": "Case Study • UX/UI • Deceptive Patterns • E-commerce Experience • Information Design ",
+        "id": "project-three",
+        "name": "Project Three",
+        "tags": ["Branding", "Accessibility", "Placeholder"],
         "period": "2026",
-        "img": "/assets/carpeprojects.svg",
-        "link": "/DeceptiveUXPatterns.pdf"
-    },
-    {
-        "name": "A11YVERSE Branding",
-        "tags": "UX/UI • Brand Guidelines • InDesign • Digital Design • Innovative Branding",
-        "period": "2026",
-        "img": "/assets/a11yverseprojects.svg",
-        "link": "https://www.linkedin.com/in/mikaela-olarte/"
-    },
-    {
-        "name": "HopScotch Circuit",
-        "tags": "Physical Computing • UX/UI • Circuits • P5.js • Makey Makey • Interactive System",
-        "period": "2026",
-        "img": "/assets/hopscotchprojects.svg",
-        "link": "/HopScotchCircuit.pdf"
+        "blurb": "A short one or two sentence summary of the project will go here.",
+        "planet": "planet_blue"
     }
 ]

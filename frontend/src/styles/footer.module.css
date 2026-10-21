@@ -9,9 +9,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
     padding: 16px 30px;
     border-radius: 100px;
-    overflow: hidden;
 }
 
 #nav_list {
@@ -24,12 +25,35 @@
     padding: 0;
 }
 
-#logo_link a p,
-#logo_link a:visited p{
+#logo_link {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    color: var(--font-primary);
     text-decoration: none;
+}
+
+#logo_link:hover p {
+    text-decoration: underline;
+}
+
+#logo_link img {
+    height: 28px;
+    width: auto;
 }
 
 .nav_item img {
     height: clamp(20px, 1.5vw, 32px);
     width: auto;
+}
+@media (max-width: 480px) {
+    #footer_nav {
+        justify-content: center;
+        padding: 20px 8px;
+        text-align: center;
+    }
+
+    #logo_link {
+        align-items: center;
+    }
 }

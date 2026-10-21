@@ -1,0 +1,11 @@
+[
+    { "id": "piece-one", "name": "Piece One", "shape": "tall", "tint": "tint_pink", "rotate": -3 },
+    { "id": "piece-two", "name": "Piece Two", "shape": "wide", "tint": "tint_blue", "rotate": 2 },
+    { "id": "piece-three", "name": "Piece Three", "shape": "square", "tint": "tint_lilac", "rotate": -1.5 },
+    { "id": "piece-four", "name": "Piece Four", "shape": "square", "tint": "tint_blue", "rotate": 3 },
+    { "id": "piece-five", "name": "Piece Five", "shape": "tall", "tint": "tint_lilac", "rotate": 1.5 },
+    { "id": "piece-six", "name": "Piece Six", "shape": "wide", "tint": "tint_pink", "rotate": -2.5 },
+    { "id": "piece-seven", "name": "Piece Seven", "shape": "square", "tint": "tint_pink", "rotate": 2.5 },
+    { "id": "piece-eight", "name": "Piece Eight", "shape": "tall", "tint": "tint_blue", "rotate": -2 },
+    { "id": "piece-nine", "name": "Piece Nine", "shape": "wide", "tint": "tint_lilac", "rotate": 2 }
+]

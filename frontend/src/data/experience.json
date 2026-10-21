@@ -3,30 +3,30 @@
         "company": "Sheridan College",
         "title": "Centre for Applied AI — UXUI Research Assistant",
         "period": "Jan 2026 - Present",
-        "img": "assets/sheridan.png"
-    },
-    {
-        "company": "Women in Business and Technology",
-        "title": "Founder and President",
-        "period": "Jan 2025 - Present",
-        "img": "assets/wbt.png"
-    },
-    {
-        "company": "Digita11y Accessible",
-        "title": "Junior Interactive Designer",
-        "period": "July 2024 - Present",
-        "img": "assets/digita11y_accessible.png"
-    },
-    {
-        "company": "#a11yTO",
-        "title": "Volunteer",
-        "period": "April 2024 - Present",
-        "img": "assets/a11yto.png"
+        "img": "/assets/sheridan.png"
     },
     {
         "company": "A11YVERSE",
         "title": "Interactive Designer and Event Coordinator",
         "period": "Jan 2026 - Present",
-        "img": "assets/a11yverse.png"
+        "img": "/assets/a11yverse.png"
+    },
+    {
+        "company": "Women in Business and Technology",
+        "title": "Founder and President",
+        "period": "Jan 2025 - Present",
+        "img": "/assets/wbt.png"
+    },
+    {
+        "company": "Digita11y Accessible",
+        "title": "Junior Interactive Designer",
+        "period": "July 2024 - Present",
+        "img": "/assets/digita11y_accessible.png"
+    },
+    {
+        "company": "#a11yTO",
+        "title": "Volunteer",
+        "period": "April 2024 - Present",
+        "img": "/assets/a11yto.png"
     }
 ]
