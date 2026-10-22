@@ -30,9 +30,9 @@ function Projects() {
                         return (
                         <li key={project.id} style={{ "--i": index }}>
                             <article className={`${styles.project_card} ${hasCaseStudy ? styles.ready : ""} glass_bg`}>
-                                <div className={styles.thumbnail} aria-hidden="true">
+                                <div className={styles.thumbnail} aria-hidden={project.thumbnail ? undefined : "true"}>
                                     {project.thumbnail ? (
-                                        <img src={project.thumbnail} alt="" />
+                                        <img src={project.thumbnail} alt={project.thumbnailAlt} />
                                     ) : (
                                         <div className={`${styles.planet} ${styles[project.planet]}`} />
                                     )}

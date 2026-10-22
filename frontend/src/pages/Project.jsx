@@ -5,6 +5,7 @@ import caseStudies from "@data/caseStudies.json";
 import styles from "@styles/project.module.css";
 import Laptop from "@components/laptop";
 import Poster from "@components/poster";
+import Video from "@components/video";
 import useReveal from "@hooks/useReveal";
 
 // inverted pyramid: what you need to know first, then the details, then the background
@@ -16,16 +17,18 @@ const TIERS = [
 
 // the top of the page isn't in the JSON sections, so give the rail its own entries for it
 function headlineSections(study) {
-    return [
-        { id: "overview", tier: "headline", eyebrow: "Overview" },
-        { id: "preview", tier: "headline", eyebrow: study.preview.label },
-    ];
+    const overview = { id: "overview", tier: "headline", eyebrow: "Overview" };
+    const preview = { id: "preview", tier: "headline", eyebrow: study.preview.label };
+    return study.preview.placement === "top" ? [preview, overview] : [overview, preview];
 }
 
-// the work itself: a live site on a laptop, or an image as a print
+// the work itself: a live site on a laptop, an image as a print, or a video
 function Preview({ preview }) {
     if (preview.type === "poster") {
         return <Poster src={preview.src} fullSrc={preview.fullSrc} alt={preview.alt} />;
+    }
+    if (preview.type === "video") {
+        return <Video youtubeId={preview.youtubeId} title={preview.title} />;
     }
     return <Laptop url={preview.url} title={preview.title} />;
 }
@@ -51,6 +54,45 @@ function useActiveSection(ids) {
     }, [ids]);
 
     return active;
+}
+
+// Lets visitors flip between title typefaces that were tried, with the final pick marked.
+function TypeExplorer({ block }) {
+    const finalIndex = Math.max(0, block.items.findIndex((item) => item.final));
+    const [index, setIndex] = useState(finalIndex);
+    const item = block.items[index];
+
+    return (
+        <div className={styles.type_explorer}>
+            <figure className={styles.type_preview}>
+                <img key={item.src} src={item.src} alt={item.alt} />
+                <figcaption aria-live="polite">
+                    <span className={styles.type_name}>{item.name}</span>
+                    {item.final && <span className={styles.type_final}>✦ Final pick</span>}
+                    <span className={styles.type_note}>{item.note}</span>
+                </figcaption>
+            </figure>
+            <ul className={styles.type_options} aria-label="Title typeface options">
+                {block.items.map((option, optionIndex) => (
+                    <li key={option.src}>
+                        <button
+                            type="button"
+                            onClick={() => setIndex(optionIndex)}
+                            aria-pressed={optionIndex === index}
+                            // the button is named by its typeface, so its preview's description doesn't repeat in the name
+                            aria-label={`${option.name}${option.final ? " (final pick)" : ""}`}
+                        >
+                            <img src={option.src} alt={option.alt} />
+                            <span>
+                                {option.name}
+                                {option.final && <span className={styles.visually_hidden}> (final pick)</span>}
+                            </span>
+                        </button>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    );
 }
 
 function Block({ block }) {
@@ -125,7 +167,7 @@ function Block({ block }) {
 
         case "list":
             return (
-                <ul className={styles.list}>
+                <ul className={`${styles.list} ${block.columns === 3 ? styles.list_three : ""}`}>
                     {block.items.map((item) => (
                         <li key={item.title}>
                             <h4>{item.title}</h4>
@@ -133,6 +175,56 @@ function Block({ block }) {
                         </li>
                     ))}
                 </ul>
+            );
+
+        case "image":
+            return (
+                <figure className={styles.figure}>
+                    <img src={block.src} alt={block.alt} loading="lazy" />
+                    {block.caption && <figcaption>{block.caption}</figcaption>}
+                </figure>
+            );
+
+        case "type-explorer":
+            return <TypeExplorer block={block} />;
+
+        case "sequence":
+            return (
+                // focusable so keyboard users can scroll the filmstrip when it overflows on small screens
+                <ol className={styles.sequence} tabIndex={0} aria-label={block.label || "Step sequence"}>
+                    {block.frames.map((frame, frameIndex) => (
+                        <li key={frame.src}>
+                            <figure>
+                                <span className={styles.sequence_number} aria-hidden="true">{frameIndex + 1}</span>
+                                <img src={frame.src} alt={frame.alt} loading="lazy" />
+                                <figcaption>
+                                    <span className={styles.sequence_title}>{frame.title}</span>
+                                    {frame.text}
+                                </figcaption>
+                            </figure>
+                        </li>
+                    ))}
+                </ol>
+            );
+
+        case "gallery":
+            return (
+                <div
+                    className={[
+                        styles.gallery,
+                        block.columns === 3 ? styles.gallery_three : "",
+                        // drafts and studies show the whole image on paper instead of being cropped
+                        block.fit === "contain" ? styles.gallery_contain : "",
+                    ].join(" ")}
+                >
+                    {block.items.map((item) => (
+                        <figure key={item.src} className={styles.figure}>
+                            {/* focus picks which part of a cropped photo stays in frame */}
+                            <img src={item.src} alt={item.alt} loading="lazy" style={item.focus ? { objectPosition: item.focus } : undefined} />
+                            {item.caption && <figcaption>{item.caption}</figcaption>}
+                        </figure>
+                    ))}
+                </div>
             );
 
         case "code":
@@ -183,7 +275,8 @@ function Rail({ sections, active }) {
                                             href={`#${section.id}`}
                                             aria-current={active === section.id ? "location" : undefined}
                                         >
-                                            {section.eyebrow}
+                                            {/* plain section titles make the clearest map; the page's own top parts only have a label */}
+                                            {section.title || section.eyebrow}
                                         </a>
                                     </li>
                                 ))}
@@ -204,6 +297,11 @@ function Project() {
     const sectionIds = useMemo(() => sections.map((section) => section.id), [sections]);
     const active = useActiveSection(sectionIds);
 
+    // name the tab after the project, so screen readers announce which case study opened
+    useEffect(() => {
+        document.title = `${study ? study.title : "Project"} | Mikaela Olarte`;
+    }, [study]);
+
     if (!study) {
         return (
             <div className={`root_container ${styles.case_study}`}>
@@ -217,6 +315,18 @@ function Project() {
             </div>
         );
     }
+
+    // the work can lead the page (like a video), or follow the lede
+    const previewOnTop = study.preview.placement === "top";
+    const previewSection = (
+        <section
+            id="preview"
+            className={`${styles.preview} ${previewOnTop ? styles.preview_top : ""}`}
+            aria-label={study.preview.label}
+        >
+            <Preview preview={study.preview} />
+        </section>
+    );
 
     return (
         <div className={`root_container ${styles.case_study}`}>
@@ -234,10 +344,13 @@ function Project() {
 
                             {tier.id === "headline" ? (
                                 <>
-                                    <header id="overview" className={styles.overview}>
-                                        <Link to="/projects" className={styles.back}>
-                                            <span aria-hidden="true">←</span> All projects
-                                        </Link>
+                                    <Link to="/projects" className={`${styles.back} ${styles.back_top}`}>
+                                        <span aria-hidden="true">←</span> All projects
+                                    </Link>
+
+                                    {previewOnTop && previewSection}
+
+                                    <header id="overview" className={`${styles.overview} ${previewOnTop ? styles.after_preview : ""}`}>
                                         <p className={styles.eyebrow}>{study.eyebrow}</p>
                                         <h1 className={styles.title}>{study.title}</h1>
                                         <p className={styles.lede}>{study.lede}</p>
@@ -263,9 +376,7 @@ function Project() {
                                         </ul>
                                     </header>
 
-                                    <section id="preview" className={styles.preview} aria-label={study.preview.label}>
-                                        <Preview preview={study.preview} />
-                                    </section>
+                                    {!previewOnTop && previewSection}
                                 </>
                             ) : (
                                 study.sections

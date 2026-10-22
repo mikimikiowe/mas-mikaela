@@ -27,6 +27,10 @@
     background: linear-gradient(100deg, #ffffff 10%, var(--accent-lilac) 45%, var(--accent-pink) 80%);
     background-size: 200% 100%;
     -webkit-background-clip: text;
+    /* the gradient only paints inside the box, so give descenders (g, y, j, p) room below the line,
+       and take it back with a negative margin so the spacing stays the same */
+    padding-bottom: 0.18em;
+    margin-bottom: -0.18em;
     background-clip: text;
     color: transparent;
     animation: shimmer 8s ease-in-out infinite alternate;
@@ -47,12 +51,19 @@
     padding-bottom: 5rem;
 }
 
-/* grid fills left to right; mixed shapes, tilts and a nudged middle column keep it feeling scattered */
+/* rows of three, with a short last row centred; mixed shapes, tilts and a nudged middle keep it feeling scattered */
 #piece_list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    --columns: 3;
+    --gap: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: var(--gap);
+}
+
+#piece_list > li {
+    width: calc((100% - (var(--columns) - 1) * var(--gap)) / var(--columns));
 }
 
 .piece {
@@ -73,72 +84,136 @@
     margin-top: 2.5rem;
 }
 
-.piece:hover {
+.piece:hover,
+.piece:focus-within {
     rotate: 0deg;
     scale: 1.04;
     z-index: 1;
 }
 
-.tall .placeholder {
-    aspect-ratio: 3 / 4;
+/* a slightly smaller print, centred in its spot, so a busy piece doesn't overpower its neighbours */
+.small .polaroid {
+    width: 90%;
+    margin-inline: auto;
 }
 
-.wide .placeholder {
-    aspect-ratio: 4 / 3;
-}
+/* POLAROIDS */
 
-.square .placeholder {
-    aspect-ratio: 1;
-}
-
-.placeholder {
+.polaroid {
+    position: relative;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.35rem;
-    border-radius: 20px;
-    border: 1.5px dashed var(--border-soft);
-    box-shadow: 0 12px 30px rgba(30, 16, 70, 0.3);
+    gap: 0.9rem;
+    width: 100%;
+    padding: 12px 12px 18px;
+    border: none;
+    border-radius: 6px;
+    background: linear-gradient(180deg, #fffdfb, #f6f0ff);
+    box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.8) inset,
+        0 14px 34px rgba(20, 10, 50, 0.4);
+    color: var(--bg-deep);
+    text-align: left;
+    cursor: pointer;
     transition: box-shadow 0.3s ease;
 }
 
-.piece:hover .placeholder {
-    box-shadow: 0 18px 44px rgba(30, 16, 70, 0.45);
+.piece:hover .polaroid {
+    box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.8) inset,
+        0 22px 50px rgba(20, 10, 50, 0.5),
+        0 0 40px rgba(255, 198, 236, 0.25);
 }
 
-.placeholder span {
-    font-size: 1.75rem;
-    color: var(--accent-pink);
+.polaroid:focus-visible {
+    outline: 3px solid var(--accent-pink);
+    outline-offset: 5px;
 }
 
-.placeholder p {
-    font-size: 1.2rem;
+.tape {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    z-index: 1;
+    width: 92px;
+    height: 26px;
+    translate: -50% 0;
+    rotate: -4deg;
+    box-shadow: 0 2px 6px rgba(20, 10, 50, 0.18);
 }
 
-.placeholder .soon {
+.tape_pink {
+    background: rgba(255, 198, 236, 0.85);
+}
+
+.tape_blue {
+    background: rgba(170, 220, 255, 0.85);
+    rotate: 3deg;
+}
+
+.tape_lilac {
+    background: rgba(205, 184, 255, 0.85);
+}
+
+.photo {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 3px;
+    background: #ddd3f0;
+}
+
+.tall .photo {
+    aspect-ratio: 4 / 5;
+}
+
+.wide .photo {
+    aspect-ratio: 4 / 3;
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: scale 0.6s ease;
+}
+
+.piece:hover .photo img {
+    scale: 1.05;
+}
+
+.count {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    padding: 3px 10px;
+    border-radius: 100px;
+    background: rgba(30, 22, 66, 0.72);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    color: var(--font-primary);
     font-family: var(--secondary-font-family);
-    font-size: 0.9rem;
-    font-style: italic;
-    color: var(--font-muted);
+    font-size: 0.8rem;
 }
 
-.tint_pink {
-    background:
-        radial-gradient(circle at 30% 25%, rgba(255, 227, 245, 0.35), transparent 55%),
-        rgba(255, 159, 216, 0.18);
+.caption {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding-inline: 4px;
 }
 
-.tint_lilac {
-    background:
-        radial-gradient(circle at 30% 25%, rgba(242, 236, 255, 0.35), transparent 55%),
-        rgba(185, 155, 255, 0.2);
+.piece_title {
+    font-family: var(--primary-font-family);
+    font-size: 1.35rem;
+    line-height: 1.15;
+    color: var(--bg-deep);
 }
 
-.tint_blue {
-    background:
-        radial-gradient(circle at 30% 25%, rgba(230, 251, 255, 0.35), transparent 55%),
-        rgba(155, 215, 255, 0.18);
+.piece_meta {
+    font-family: var(--secondary-font-family);
+    font-size: 0.85rem;
+    color: #6a5c9a;
 }
 
 /* ANIMATIONS */
@@ -157,7 +232,7 @@
 
 @media (max-width: 900px) {
     #piece_list {
-        grid-template-columns: repeat(2, 1fr);
+        --columns: 2;
     }
 
     .piece:nth-child(3n + 2) {
@@ -171,7 +246,8 @@
 
 @media (max-width: 560px) {
     #piece_list {
-        grid-template-columns: 1fr;
+        --columns: 1;
+        --gap: 2.5rem;
     }
 
     .piece:nth-child(2n) {

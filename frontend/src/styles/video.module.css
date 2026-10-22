@@ -1,0 +1,57 @@
+.video {
+    position: relative;
+    margin: 0;
+    width: 100%;
+}
+
+/* a soft pool of cyan and violet light under the frame, like the projection on the floor */
+.video::before {
+    content: "";
+    position: absolute;
+    inset: 8% 6% -6%;
+    z-index: -1;
+    border-radius: 50%;
+    background: radial-gradient(ellipse at center, rgba(127, 227, 240, 0.28), rgba(185, 155, 255, 0.18) 45%, transparent 72%);
+    filter: blur(30px);
+}
+
+.frame {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: clamp(14px, 2.4vw, 24px);
+    border: 1px solid var(--border-soft);
+    background: #0d0a24;
+    box-shadow: 0 30px 60px rgba(14, 8, 38, 0.5);
+}
+
+.frame iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.caption {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.4rem 1.25rem;
+    margin-top: 1.25rem;
+    font-family: var(--secondary-font-family);
+    font-size: 0.95rem;
+    color: var(--font-muted);
+}
+
+.caption a {
+    display: inline;
+    color: var(--accent-pink);
+    text-underline-offset: 3px;
+}
+
+.caption a:focus-visible {
+    outline: 2px solid var(--accent-pink);
+    outline-offset: 3px;
+    border-radius: 4px;
+}

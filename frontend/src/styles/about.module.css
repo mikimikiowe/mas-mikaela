@@ -141,6 +141,10 @@
     background: linear-gradient(100deg, #ffffff 10%, var(--accent-lilac) 45%, var(--accent-pink) 80%);
     background-size: 200% 100%;
     -webkit-background-clip: text;
+    /* the gradient only paints inside the box, so give descenders (g, y, j, p) room below the line,
+       and take it back with a negative margin so the spacing stays the same */
+    padding-bottom: 0.18em;
+    margin-bottom: -0.18em;
     background-clip: text;
     color: transparent;
     animation: shimmer 8s ease-in-out infinite alternate;

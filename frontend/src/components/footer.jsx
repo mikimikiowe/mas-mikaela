@@ -51,34 +51,32 @@ function Icon({ name }) {
 function Footer() {
     return (
         <footer id={styles.footer} className="glass_bg" aria-label="Footer">
-            <nav id={styles.footer_nav}>
+            <nav id={styles.footer_nav} aria-label="Footer">
                 <Link to="/" id={styles.logo_link}>
-                    <img src="/assets/logo.svg" alt="Mas Mikaela Logo" />
+                    <img src="/assets/logo.svg" alt="Más Mikaela home" />
                     <p>Designed by Mikaela Olarte</p>
                 </Link>
 
-                <ul id={styles.nav_list} aria-label="Primary">
+                <ul id={styles.nav_list} aria-label="Social media">
                     <li className={styles.nav_item}>
-                        <Link to="https://www.linkedin.com/in/mikaela-olarte/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                        <Link to="https://www.linkedin.com/in/mikaela-olarte/" aria-label="LinkedIn (opens in a new tab)" target="_blank" rel="noopener noreferrer">
                             <Icon name="linkedin" />
                         </Link>
                     </li>
                     <li className={styles.nav_item}>
-                        <Link to="https://www.instagram.com/masmikaela.design/" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                        <Link to="https://www.instagram.com/masmikaela.design/" aria-label="Instagram (opens in a new tab)" target="_blank" rel="noopener noreferrer">
                             <Icon name="instagram" />
                         </Link>
                     </li>
                     <li className={styles.nav_item}>
-                        <Link to="https://www.youtube.com/@masmikaela" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+                        <Link to="https://www.youtube.com/@masmikaela" aria-label="YouTube (opens in a new tab)" target="_blank" rel="noopener noreferrer">
                             <Icon name="youtube" />
                         </Link>
                     </li>
                     <li className={styles.nav_item}>
                         <Link
                             to="mailto:masmikaelaolarte@gmail.com"
-                            aria-label="Email"
-                            target="_blank"
-                            rel="noopener noreferrer"
+                            aria-label="Email Mikaela"
                         >
                             <Icon name="email" />
                         </Link>

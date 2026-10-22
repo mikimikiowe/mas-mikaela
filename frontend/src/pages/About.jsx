@@ -79,7 +79,7 @@ function About() {
                     {skills.map((skill, index) => (
                         <li key={skill.name} className={styles.reveal} style={{ "--i": index }}>
                             <div className={`${styles.skill_item} glass_bg`}>
-                                <img src={skill.img} alt="" />
+                                <img src={skill.img} alt={`${skill.name} logo`} />
                                 <p>{skill.name}</p>
                             </div>
                         </li>
@@ -100,7 +100,7 @@ function About() {
                     {experience.map((exp, index) => (
                         <li key={exp.company} className={styles.reveal} style={{ "--i": index }}>
                             <article className={`${styles.experience_item} glass_bg`}>
-                                <img src={exp.img} alt="" />
+                                <img src={exp.img} alt={`${exp.company} logo`} />
                                 <div className={styles.experience_text}>
                                     <h3>{exp.company}</h3>
                                     <p>{exp.title}</p>

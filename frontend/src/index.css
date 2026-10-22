@@ -3,11 +3,12 @@
   --bg-deep: #2E2360;
   --bg-secondary: rgba(255, 255, 255, 0.08);
   --bg-gradient:
-    radial-gradient(ellipse 70% 50% at 15% 0%, rgba(176, 148, 245, 0.55), transparent 70%),
+    radial-gradient(ellipse 70% 50% at 15% 0%, rgba(176, 148, 245, 0.3), transparent 70%),
     radial-gradient(ellipse 50% 40% at 95% 25%, rgba(228, 150, 220, 0.35), transparent 70%),
     linear-gradient(180deg, #5E4CA6 0%, #4F3F8E 55%, #3F3178 100%);
   --font-primary: #F6F2FF;
-  --font-muted: #DCD3F7;
+  /* lightened to keep secondary text at WCAG AA contrast, even under the background glow */
+  --font-muted: #EEE9FF;
   --accent-lilac: #CDB8FF;
   --accent-pink: #FFC6EC;
   --border-soft: rgba(255, 255, 255, 0.28);
@@ -35,6 +36,9 @@ body,
 #root {
   display: flex;
   flex-direction: column;
+  /* fill the screen so the footer sits at the bottom even on short pages */
+  min-height: 100vh;
+  min-height: 100dvh;
 }
 
 /* \* {
@@ -113,8 +117,57 @@ li {
   align-self: center;
 }
 
+/* tighter side gutters on phones leave more room for the content */
+@media (max-width: 480px) {
+  :root {
+    --inline-padding: 1rem;
+  }
+}
+
+/* phone pages are tall, so the percentage-sized glows stretch over much more text; soften them to keep AA contrast */
+@media (max-width: 700px) {
+  :root {
+    --bg-gradient:
+      radial-gradient(ellipse 70% 50% at 15% 0%, rgba(176, 148, 245, 0.14), transparent 70%),
+      radial-gradient(ellipse 50% 40% at 95% 25%, rgba(228, 150, 220, 0.16), transparent 70%),
+      linear-gradient(180deg, #5E4CA6 0%, #4F3F8E 55%, #3F3178 100%);
+  }
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  outline: none;
+}
+
+/* hidden until a keyboard user tabs to it, then it drops in at the top left */
+.skip_link {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 100;
+  padding: 10px 18px;
+  border-radius: 100px;
+  background: var(--font-primary);
+  color: var(--bg-deep);
+  font-family: var(--secondary-font-family);
+  font-weight: bold;
+  text-decoration: none;
+  translate: 0 -200%;
+  transition: translate 0.2s ease;
+}
+
+.skip_link:focus {
+  translate: 0 0;
+  outline: 2px solid var(--accent-pink);
+  outline-offset: 3px;
+}
+
 .root_container {
   display: flex;
   flex-direction: column;
   flex: 1;
+  /* trim decorations that hang past the screen edge instead of letting the page scroll sideways */
+  overflow-x: clip;
 }

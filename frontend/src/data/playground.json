@@ -1,11 +1,165 @@
 [
-    { "id": "piece-one", "name": "Piece One", "shape": "tall", "tint": "tint_pink", "rotate": -3 },
-    { "id": "piece-two", "name": "Piece Two", "shape": "wide", "tint": "tint_blue", "rotate": 2 },
-    { "id": "piece-three", "name": "Piece Three", "shape": "square", "tint": "tint_lilac", "rotate": -1.5 },
-    { "id": "piece-four", "name": "Piece Four", "shape": "square", "tint": "tint_blue", "rotate": 3 },
-    { "id": "piece-five", "name": "Piece Five", "shape": "tall", "tint": "tint_lilac", "rotate": 1.5 },
-    { "id": "piece-six", "name": "Piece Six", "shape": "wide", "tint": "tint_pink", "rotate": -2.5 },
-    { "id": "piece-seven", "name": "Piece Seven", "shape": "square", "tint": "tint_pink", "rotate": 2.5 },
-    { "id": "piece-eight", "name": "Piece Eight", "shape": "tall", "tint": "tint_blue", "rotate": -2 },
-    { "id": "piece-nine", "name": "Piece Nine", "shape": "wide", "tint": "tint_lilac", "rotate": 2 }
+    {
+        "id": "dare-to-care",
+        "title": "Dare to Care Leadership Award",
+        "date": "April 2026",
+        "tag": "Award",
+        "shape": "tall",
+        "rotate": -2.5,
+        "tape": "pink",
+        "images": [
+            {
+                "src": "/assets/playground1.1.png",
+                "alt": "Mikaela smiling in front of a Sheridan backdrop, holding a glass award and a framed Dare to Care Student Leadership Award certificate.",
+                "focus": "50% 30%"
+            },
+            {
+                "src": "/assets/playground1.2.png",
+                "alt": "Mikaela and Delia Jansen holding their Dare to Care Student Leadership Awards, Student Choice and Staff Choice."
+            },
+            {
+                "src": "/assets/playground.1.3.png",
+                "alt": "Sheridan's 2025–2026 Student Leadership Awards graphic, listing Mikaela Olarte for the Dare to Care Leadership Award: Student Choice."
+            }
+        ],
+        "body": [
+            { "text": "I was honoured to receive the Dare to Care Leadership Award – Student Choice at Sheridan College's 2026 Student Leadership Awards." },
+            { "text": "When I arrived at Sheridan two years ago, my goal was simply to learn and connect with new people. Since then, I have had the opportunity to build communities, found the Women in Business and Technology Club, and collaborate with people who continually challenge me to grow. I am deeply grateful for this recognition." }
+        ]
+    },
+    {
+        "id": "somewhere-between-peaks",
+        "title": "Somewhere Between Peaks",
+        "date": "November 2025",
+        "tag": "Art · TouchDesigner",
+        "shape": "wide",
+        "rotate": 2,
+        "tape": "blue",
+        "images": [
+            {
+                "src": "/assets/playground2.1.png",
+                "alt": "Mikaela standing beside Somewhere Between Peaks, a glowing projection-mapped map of Latin America in red, yellow and blue patterns on a gallery stand.",
+                "focus": "45% 50%"
+            },
+            {
+                "src": "/assets/playground2.3.png",
+                "alt": "Close-up of Somewhere Between Peaks: South America filled with bright folk-art patterns, surrounded by rippling blue projected water."
+            },
+            {
+                "src": "/assets/playground2.4.png",
+                "alt": "Somewhere Between Peaks displayed on a black grid stand, with swirling blue water and a colourful patterned continent."
+            },
+            {
+                "src": "/assets/playground2.2.png",
+                "alt": "Contest participants gathered together on a small stage at the Latin American art event."
+            }
+        ],
+        "body": [
+            { "text": "I entered Sheridan College's Latin American Art Contest and won 2nd place in the 3D Visual Arts category. As a design student, submitting work to an art competition at an art school was a new step for me, and one I am glad I took." },
+            { "text": "My submission, Somewhere Between Peaks, is a 3D projection-mapping piece created in TouchDesigner. It explores Latin America as a connected whole, reflecting how culture, history and identity continue to link the Latino community across borders, even far from home. Through layered visuals and movement, the piece shows how those connections flow, overlap and persist beyond geography." },
+            { "text": "The experience also connected me with many talented and inspiring members of the Sheridan community, which made the process especially meaningful." }
+        ]
+    },
+    {
+        "id": "training-camp",
+        "title": "WBT Training Camp",
+        "date": "October 2025",
+        "tag": "Event",
+        "shape": "wide",
+        "rotate": -1.5,
+        "tape": "lilac",
+        "images": [
+            {
+                "src": "/assets/playground3.4.png",
+                "alt": "A selfie of Mikaela in front of a big, smiling group of Training Camp attendees.",
+                "focus": "50% 45%"
+            },
+            {
+                "src": "/assets/playground3.2.png",
+                "alt": "A speaker presenting to a seated audience in front of a large screen."
+            },
+            {
+                "src": "/assets/playground3.3.png",
+                "alt": "A speaker in a pink blazer leading a workshop."
+            },
+            {
+                "src": "/assets/playground3.6.png",
+                "alt": "Hala Anwar and Leigh Mitchell on stage beneath a Failing Forward Panel slide."
+            },
+            {
+                "src": "/assets/playground3.1.png",
+                "alt": "Attendees standing in a circle, listening to a workshop leader."
+            },
+            {
+                "src": "/assets/playground3.5.png",
+                "alt": "Mikaela smiling with two attendees, all wearing event lanyards."
+            }
+        ],
+        "body": [
+            { "text": "After months of planning, the Women in Business and Technology Club hosted its Training Camp. The event was designed to help students build a strong networking foundation, gain confidence and step outside their comfort zones to connect with professionals in technology and business." },
+            { "text": "The day featured a series of keynotes, workshops and a panel:" },
+            {
+                "list": [
+                    "Keynote Speech – Jennifer Bolt, PhD",
+                    "Constructing an Elevator Pitch Workshop – Sneha Punwani, MBA",
+                    "Interview Prep Essentials Presentation – Gloria-anne Walchetseder",
+                    "Empathy as Your Superpower: Leading with Heart in the Workplace Workshop – Theresa Nguyen",
+                    "Failing Forward Panel – Hala Anwar and Leigh Mitchell, ChangeMakerCoOrg"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "ai-ladies-lounge",
+        "title": "Speaking at The AI Ladies Lounge",
+        "date": "July 2025",
+        "tag": "Talk",
+        "shape": "wide",
+        "rotate": -2.5,
+        "tape": "pink",
+        "images": [
+            {
+                "src": "/assets/playground4.3.png",
+                "alt": "Mikaela presenting beside a projected slide titled UX/UI 5 Best Practices.",
+                "focus": "84% 52%",
+                "zoom": 1.4
+            },
+            {
+                "src": "/assets/playground4.1.png",
+                "alt": "Mikaela mid-presentation at the front of a lecture room, gesturing toward the audience.",
+                "focus": "50% 70%"
+            },
+            {
+                "src": "/assets/playground4.4.png",
+                "alt": "A large group photo of The AI Ladies Lounge attendees in front of floor-to-ceiling windows."
+            },
+            {
+                "src": "/assets/playground4.2.png",
+                "alt": "Attendees chatting and networking between presentations."
+            }
+        ],
+        "body": [
+            { "text": "I presented on UX/UI best practices at The AI Ladies Lounge, an event led by Maria Becerra. It was my first time speaking to a large audience of new faces, and the room's sharp, thoughtful and welcoming community quickly put me at ease." },
+            { "text": "The presentations and demos throughout the day gave me a wealth of new practices to apply, and I look forward to bringing these takeaways back to the Women in Business and Technology Club at Sheridan College." }
+        ]
+    },
+    {
+        "id": "wbt-recruiting",
+        "title": "WBT Recruitment Poster",
+        "date": "February 2026",
+        "tag": "Poster",
+        "shape": "tall",
+        "rotate": 2,
+        "tape": "blue",
+        "images": [
+            {
+                "src": "/assets/newplayground5_web.jpg",
+                "alt": "A pink and navy recruitment poster reading We're Recruiting! Join our WBT club! We need you!, with an owl mascot, a member ID badge with a QR code, and open roles for designers, a design lead, a developer, outreach execs and an event lead.",
+                "focus": "50% 30%"
+            }
+        ],
+        "body": [
+            { "text": "I designed this recruitment poster for the Women in Business and Technology Club at Sheridan College to attract new members for design, development, outreach and event roles." }
+        ]
+    }
 ]

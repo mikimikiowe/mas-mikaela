@@ -24,27 +24,44 @@
     background: linear-gradient(100deg, #ffffff 10%, var(--accent-lilac) 45%, var(--accent-pink) 80%);
     background-size: 200% 100%;
     -webkit-background-clip: text;
+    /* the gradient only paints inside the box, so give descenders (g, y, j, p) room below the line,
+       and take it back with a negative margin so the spacing stays the same */
+    padding-bottom: 0.18em;
+    margin-bottom: -0.18em;
     background-clip: text;
     color: transparent;
     animation: shimmer 8s ease-in-out infinite alternate;
     filter: drop-shadow(0 4px 24px rgba(205, 184, 255, 0.35));
 }
 
+/* never below 24px, so the lilac "más" counts as large text for WCAG contrast */
 #tagline {
-    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-size: clamp(1.5rem, 3vw, 2rem);
 }
 
 #tagline strong {
     color: var(--accent-pink);
 }
 
+/* in Handlee the full stop tucks right up against the "a", so give it a hair of room */
+.full_stop {
+    margin-left: 0.06em;
+}
+
 .mas {
     position: relative;
     display: inline-block;
-    color: var(--accent-lilac);
+    color: #D9C8FF;
     border-bottom: 2px dashed var(--accent-lilac);
     cursor: help;
     outline: none;
+}
+
+/* keyboard users still need to see where focus is, not just the tooltip */
+.mas:focus-visible {
+    outline: 2px solid var(--accent-pink);
+    outline-offset: 4px;
+    border-radius: 4px;
 }
 
 .mas_definition {
@@ -111,14 +128,15 @@
     box-shadow: 0 10px 40px rgba(255, 198, 236, 0.5);
 }
 
+/* a deeper glass than the shared one, so the white label keeps AA contrast over the bright hero glow */
 .button_ghost {
     border: 1px solid var(--border-soft);
-    background: var(--bg-secondary);
+    background: rgba(30, 22, 66, 0.28);
     color: var(--font-primary);
 }
 
 .button_ghost:hover {
-    background: rgba(255, 255, 255, 0.16);
+    background: rgba(30, 22, 66, 0.45);
 }
 
 #hero_visual {

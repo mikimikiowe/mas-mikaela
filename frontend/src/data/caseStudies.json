@@ -25,7 +25,7 @@
                 "id": "problem",
                 "tier": "details",
                 "eyebrow": "The problem",
-                "title": "Four websites, none of them have the full picture",
+                "title": "Events are spread across four websites",
                 "blocks": [
                     {
                         "type": "quote",
@@ -41,7 +41,7 @@
                 "id": "solution",
                 "tier": "details",
                 "eyebrow": "The solution",
-                "title": "One place, one format, filtered your way",
+                "title": "One site for every campus event",
                 "blocks": [
                     {
                         "type": "text",
@@ -52,8 +52,8 @@
             {
                 "id": "audit",
                 "tier": "details",
-                "eyebrow": "IA · Content audit",
-                "title": "Starting with what already existed",
+                "eyebrow": "Information architecture",
+                "title": "Content audit",
                 "blocks": [
                     {
                         "type": "text",
@@ -74,8 +74,8 @@
             {
                 "id": "model",
                 "tier": "details",
-                "eyebrow": "IA · Content model",
-                "title": "One shape for every event",
+                "eyebrow": "Information architecture",
+                "title": "Content model",
                 "blocks": [
                     {
                         "type": "text",
@@ -100,8 +100,8 @@
             {
                 "id": "facets",
                 "tier": "details",
-                "eyebrow": "IA · Organization scheme",
-                "title": "Organized around the questions students ask",
+                "eyebrow": "Information architecture",
+                "title": "Filters",
                 "blocks": [
                     {
                         "type": "text",
@@ -132,8 +132,8 @@
             {
                 "id": "structure",
                 "tier": "details",
-                "eyebrow": "IA · Page structure",
-                "title": "From a glance to the exact event",
+                "eyebrow": "Information architecture",
+                "title": "Page structure",
                 "blocks": [
                     {
                         "type": "text",
@@ -155,8 +155,8 @@
             {
                 "id": "navigation",
                 "tier": "details",
-                "eyebrow": "IA · Navigation & labelling",
-                "title": "Labels in students' own words",
+                "eyebrow": "Information architecture",
+                "title": "Navigation and labels",
                 "blocks": [
                     {
                         "type": "list",
@@ -185,7 +185,7 @@
                 "id": "build",
                 "tier": "background",
                 "eyebrow": "Behind the scenes",
-                "title": "How the data gets there",
+                "title": "How the data works",
                 "blocks": [
                     {
                         "type": "text",
@@ -207,7 +207,7 @@
                 "id": "next",
                 "tier": "background",
                 "eyebrow": "What's next",
-                "title": "Where it could go from here",
+                "title": "Next steps",
                 "blocks": [
                     {
                         "type": "list",
@@ -261,19 +261,60 @@
                 "id": "product",
                 "tier": "details",
                 "eyebrow": "The product",
-                "title": "Vintage on the outside, modern on the inside",
+                "title": "The PRUNUS J-150",
                 "blocks": [
                     {
                         "type": "text",
                         "text": "The PRUNUS J-150 looks like an old-school transistor radio, with its wood-grain body and gold grille, but it hides modern features too: Bluetooth, a solar panel, a rechargeable battery, and USB and TF card playback. I chose it because I love how it mixes vintage style with new tech, and because there's a lot going on that isn't obvious at first glance."
+                    },
+                    {
+                        "type": "text",
+                        "text": "Before drawing anything, I photographed the radio from every angle to find, understand and name each of its parts."
+                    },
+                    {
+                        "type": "gallery",
+                        "columns": 3,
+                        "items": [
+                            {
+                                "src": "/assets/13.png",
+                                "alt": "The PRUNUS J-150 from the front: wood-grain body, gold grille, dial and two knobs.",
+                                "caption": "Front"
+                            },
+                            {
+                                "src": "/assets/28.png",
+                                "alt": "The top of the radio, showing the fold-down handle and the phone stand.",
+                                "caption": "Top: handle and phone stand"
+                            },
+                            {
+                                "src": "/assets/24.png",
+                                "alt": "The back of the radio with its built-in solar panel.",
+                                "caption": "Back: solar panel"
+                            },
+                            {
+                                "src": "/assets/25.png",
+                                "alt": "The side of the radio with the USB port, TF card slot and DC 5V input.",
+                                "caption": "Side: ports"
+                            },
+                            {
+                                "src": "/assets/16.png",
+                                "alt": "The radio on a table with its telescoping antenna fully extended.",
+                                "caption": "Antenna extended"
+                            },
+                            {
+                                "src": "/assets/17.png",
+                                "alt": "The radio from behind at a three-quarter angle on a table, with its solar panel folded open and antenna extended.",
+                                "focus": "50% 96%",
+                                "caption": "Back, three-quarter view"
+                            }
+                        ]
                     }
                 ]
             },
             {
                 "id": "persona",
                 "tier": "details",
-                "eyebrow": "Research · Persona & testing",
-                "title": "Designing for a glamper",
+                "eyebrow": "Research",
+                "title": "Persona and testing",
                 "blocks": [
                     {
                         "type": "text",
@@ -288,8 +329,8 @@
             {
                 "id": "structure",
                 "tier": "details",
-                "eyebrow": "IA · Structure",
-                "title": "Two questions, in reading order",
+                "eyebrow": "Information architecture",
+                "title": "Layout structure",
                 "blocks": [
                     {
                         "type": "text",
@@ -298,9 +339,18 @@
                     {
                         "type": "flow",
                         "steps": [
-                            { "name": "Title", "note": "Retro Radio + Speaker: what this is about" },
-                            { "name": "Labelled diagram", "note": "What each part is called and where to find it" },
-                            { "name": "Steps 1 to 5", "note": "How to go from switched off to listening" }
+                            {
+                                "name": "Title",
+                                "note": "Retro Radio + Speaker: what this is about"
+                            },
+                            {
+                                "name": "Labelled diagram",
+                                "note": "What each part is called and where to find it"
+                            },
+                            {
+                                "name": "Steps 1 to 5",
+                                "note": "How to go from switched off to listening"
+                            }
                         ]
                     }
                 ]
@@ -308,8 +358,8 @@
             {
                 "id": "parts",
                 "tier": "details",
-                "eyebrow": "IA · Labelling",
-                "title": "Eleven parts, one diagram",
+                "eyebrow": "Information architecture",
+                "title": "Labelled parts",
                 "blocks": [
                     {
                         "type": "text",
@@ -318,17 +368,50 @@
                     {
                         "type": "fields",
                         "items": [
-                            { "name": "Antenna", "note": "Extends for clearer radio reception" },
-                            { "name": "Handle", "note": "For carrying it out to camp" },
-                            { "name": "Phone stand", "note": "Holds a phone while it streams" },
-                            { "name": "Solar panel", "note": "Charges the battery from sunlight" },
-                            { "name": "Battery entrance", "note": "Where the rechargeable battery goes" },
-                            { "name": "Bluetooth controls", "note": "Previous, pause and next" },
-                            { "name": "Ports", "note": "USB, TF card and DC 5V in" },
-                            { "name": "Tuning knob", "note": "Finds a radio station" },
-                            { "name": "Mode switch", "note": "Bluetooth music, FM, AM or SW" },
-                            { "name": "ON-OFF knob", "note": "Turns it on and sets the volume" },
-                            { "name": "Speaker", "note": "Behind the gold grille" }
+                            {
+                                "name": "Antenna",
+                                "note": "Extends for clearer radio reception"
+                            },
+                            {
+                                "name": "Handle",
+                                "note": "For carrying it out to camp"
+                            },
+                            {
+                                "name": "Phone stand",
+                                "note": "Holds a phone while it streams"
+                            },
+                            {
+                                "name": "Solar panel",
+                                "note": "Charges the battery from sunlight"
+                            },
+                            {
+                                "name": "Battery entrance",
+                                "note": "Where the rechargeable battery goes"
+                            },
+                            {
+                                "name": "Bluetooth controls",
+                                "note": "Previous, pause and next"
+                            },
+                            {
+                                "name": "Ports",
+                                "note": "USB, TF card and DC 5V in"
+                            },
+                            {
+                                "name": "Tuning knob",
+                                "note": "Finds a radio station"
+                            },
+                            {
+                                "name": "Mode switch",
+                                "note": "Bluetooth music, FM, AM or SW"
+                            },
+                            {
+                                "name": "ON-OFF knob",
+                                "note": "Turns it on and sets the volume"
+                            },
+                            {
+                                "name": "Speaker",
+                                "note": "Behind the gold grille"
+                            }
                         ]
                     }
                 ]
@@ -336,21 +419,47 @@
             {
                 "id": "steps",
                 "tier": "details",
-                "eyebrow": "IA · Instructions",
-                "title": "Five steps, one action each",
+                "eyebrow": "Information architecture",
+                "title": "The five steps",
                 "blocks": [
                     {
                         "type": "text",
-                        "text": "Each step zooms in on exactly the control it mentions, with one short instruction underneath, so the picture shows where and the words say what to do."
+                        "text": "Each step zooms in on exactly the control it mentions, with one short instruction underneath, so the picture shows where and the words say what to do. Read left to right, they take a new owner from switched off to listening."
                     },
                     {
-                        "type": "list",
-                        "items": [
-                            { "title": "1. Turn on", "text": "Turn the ON-OFF knob slightly to the right." },
-                            { "title": "2. Bluetooth", "text": "Slide the mode switch all the way to the left, then pair it with your phone or another device." },
-                            { "title": "3. Radio", "text": "Slide the mode switch to FM or AM." },
-                            { "title": "4. Tuning", "text": "Turn the tuning knob left and right until you find the station you want." },
-                            { "title": "5. Antenna", "text": "Extend the antenna for clearer radio audio." }
+                        "type": "sequence",
+                        "label": "The final five-step sequence",
+                        "frames": [
+                            {
+                                "src": "/assets/sequence1.png",
+                                "alt": "Line drawing close-up of the ON-OFF volume knob, marked OFF, VOL- and VOL+.",
+                                "title": "Turn on",
+                                "text": "Turn the ON-OFF knob slightly to the right."
+                            },
+                            {
+                                "src": "/assets/sequence2.png",
+                                "alt": "Line drawing close-up of the Bluetooth buttons, the dial and the mode switch.",
+                                "title": "Bluetooth",
+                                "text": "Slide the mode switch all the way left, then pair your phone or another device."
+                            },
+                            {
+                                "src": "/assets/sequence3.png",
+                                "alt": "Line drawing close-up of the mode switch, labelled MUSIC FM and SW AM.",
+                                "title": "Radio",
+                                "text": "Slide the mode switch to FM or AM."
+                            },
+                            {
+                                "src": "/assets/sequence4.png",
+                                "alt": "Line drawing close-up of the tuning knob beside the frequency dial.",
+                                "title": "Tuning",
+                                "text": "Turn the tuning knob left and right until you find your station."
+                            },
+                            {
+                                "src": "/assets/sequence5.png",
+                                "alt": "Line drawing of the side of the radio with the antenna extended upward.",
+                                "title": "Antenna",
+                                "text": "Extend the antenna for clearer radio audio."
+                            }
                         ]
                     }
                 ]
@@ -358,12 +467,148 @@
             {
                 "id": "visuals",
                 "tier": "details",
-                "eyebrow": "Design choices",
-                "title": "Line art with a little warmth",
+                "eyebrow": "Design",
+                "title": "Illustration and colour",
                 "blocks": [
                     {
                         "type": "text",
                         "text": "The radio is drawn in clean black line art so every control reads clearly, even in the small step close-ups. Soft peach and sage squares add warmth and a hint of the outdoors without competing with the labels."
+                    },
+                    {
+                        "type": "gallery",
+                        "fit": "contain",
+                        "items": [
+                            {
+                                "src": "/assets/30.png",
+                                "alt": "Composition study: the line-art radio and step panels with loose peach and sage squares, no title yet.",
+                                "caption": "Placing the squares around the radio and steps."
+                            },
+                            {
+                                "src": "/assets/31.png",
+                                "alt": "Composition study with more squares layered over the labels and steps.",
+                                "caption": "Layering more squares to balance the page."
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "typography",
+                "tier": "details",
+                "eyebrow": "Design",
+                "title": "Typography",
+                "blocks": [
+                    {
+                        "type": "text",
+                        "text": "I tested six typefaces for the title, from bold geometric sans serifs to a typewriter serif, before choosing a hand-drawn marker style that feels as friendly and retro as the radio itself. Try each option below."
+                    },
+                    {
+                        "type": "type-explorer",
+                        "items": [
+                            {
+                                "src": "/assets/32.png",
+                                "name": "Hand-drawn marker",
+                                "final": true,
+                                "note": "Rounded, hand-drawn capitals that echo the line art and keep the page approachable.",
+                                "alt": "Infographic draft with the title Retro Radio + Speaker in rounded, hand-drawn marker capitals."
+                            },
+                            {
+                                "src": "/assets/33.png",
+                                "name": "Wide geometric",
+                                "note": "Bold and modern, but its wide letters crowd the radio.",
+                                "alt": "Infographic draft with the title in a wide, bold geometric sans serif."
+                            },
+                            {
+                                "src": "/assets/34.png",
+                                "name": "Thin geometric",
+                                "note": "Clean and light, but too quiet next to the detailed illustration.",
+                                "alt": "Infographic draft with the title in a thin geometric sans serif."
+                            },
+                            {
+                                "src": "/assets/35.png",
+                                "name": "Condensed rounded",
+                                "note": "Compact and soft, with a slightly technical feel.",
+                                "alt": "Infographic draft with the title in a condensed, rounded sans serif."
+                            },
+                            {
+                                "src": "/assets/36.png",
+                                "name": "Heavy grotesque",
+                                "note": "Strong and poster-like, but heavier than the delicate line work.",
+                                "alt": "Infographic draft with the title in a heavy grotesque sans serif."
+                            },
+                            {
+                                "src": "/assets/37.png",
+                                "name": "Typewriter serif",
+                                "note": "Leans into nostalgia, but feels more vintage document than playful guide.",
+                                "alt": "Infographic draft with the title in a typewriter-style serif."
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "drafts",
+                "tier": "background",
+                "eyebrow": "Process",
+                "title": "Layout drafts",
+                "blocks": [
+                    {
+                        "type": "text",
+                        "text": "The layout went through several rounds, starting from a photo collage, moving through hand-lettered titles, and settling on line art with the steps running along the bottom."
+                    },
+                    {
+                        "type": "gallery",
+                        "fit": "contain",
+                        "items": [
+                            {
+                                "src": "/assets/1.png",
+                                "alt": "First draft: two photos of the radio with labels, and a row of step sketches below.",
+                                "caption": "Draft 1: photos of the radio and a first row of step sketches."
+                            },
+                            {
+                                "src": "/assets/2.png",
+                                "alt": "Draft with a hand-lettered Retro Radio title and the step panels stacked down the right side.",
+                                "caption": "Draft 2: a hand-lettered title, with the steps stacked down the side."
+                            },
+                            {
+                                "src": "/assets/6.png",
+                                "alt": "Draft with a large hand-lettered title, one photo of the radio and the five steps along the bottom.",
+                                "caption": "Draft 3: the title, radio and steps in their final positions."
+                            },
+                            {
+                                "src": "/assets/7.png",
+                                "alt": "Draft with the radio redrawn in line art and the full hand-lettered title Retro Radio + Speaker.",
+                                "caption": "Draft 4: the radio redrawn in line art, with the full title."
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "illustration",
+                "tier": "background",
+                "eyebrow": "Process",
+                "title": "From photo to line art",
+                "blocks": [
+                    {
+                        "type": "text",
+                        "text": "I first labelled a photo of the radio to make sure every part had a clear place, then redrew it in black line art so each control reads clearly, even in the small step close-ups."
+                    },
+                    {
+                        "type": "gallery",
+                        "fit": "contain",
+                        "items": [
+                            {
+                                "src": "/assets/10.png",
+                                "alt": "A photo of the radio with leader lines labelling each part.",
+                                "caption": "Labelling the parts on a photo first."
+                            },
+                            {
+                                "src": "/assets/8.png",
+                                "alt": "The radio redrawn in black line art, with the same labels.",
+                                "caption": "The same radio, redrawn in line art."
+                            }
+                        ]
                     }
                 ]
             },
@@ -371,7 +616,7 @@
                 "id": "next",
                 "tier": "background",
                 "eyebrow": "What's next",
-                "title": "Where it could go from here",
+                "title": "Next steps",
                 "blocks": [
                     {
                         "type": "list",
@@ -385,6 +630,227 @@
                                 "text": "A small, printable version of the five steps that can live with the radio."
                             }
                         ]
+                    }
+                ]
+            }
+        ]
+    },
+    "touch-design-and-data": {
+        "eyebrow": "Case study · Interactive installation",
+        "title": "Touch: Design and Data",
+        "lede": "In April 2026, our team built an interactive floor installation that makes people feel as if they're swimming through water: as they move across the projection, bubble-like particles swirl around them to the sound of ocean waves crashing onto the shore. Using a Microsoft Kinect and TouchDesigner, it turns the body into the controller, creating a calm, instruction-free moment of escape that anyone can explore.",
+        "facts": [
+            { "label": "Role", "value": "Interactive Designer, UX Researcher" },
+            { "label": "Timeline", "value": "1 month · April 2026" },
+            { "label": "Made with", "value": "TouchDesigner, Microsoft Kinect" }
+        ],
+        "highlights": [
+            { "value": "0", "label": "instructions or controllers: just step in and move" },
+            { "value": "2", "label": "senses responding at once: sight and sound" },
+            { "value": "Live", "label": "every movement reflected in real time" },
+            { "value": "3", "label": "research lenses: escapism, the butterfly effect and flow" }
+        ],
+        "preview": {
+            "type": "video",
+            "label": "Video",
+            "youtubeId": "Z065EINpmy4",
+            "title": "Touch: Design and Data, using the Microsoft Kinect and TouchDesigner"
+        },
+        "sections": [
+            {
+                "id": "challenge",
+                "tier": "details",
+                "eyebrow": "The challenge",
+                "title": "Project goal",
+                "blocks": [
+                    {
+                        "type": "quote",
+                        "text": "How might we create an immersive, interactive system where touch and movement shape sound and visuals in a way that users can feel, explore, and control using TouchDesigner and the Microsoft Kinect?"
+                    },
+                    {
+                        "type": "text",
+                        "text": "The idea started with touch, then grew into a whole responsive environment where the body itself is the interface. Instead of pressing buttons, people walk, reach and gesture, and the space answers back."
+                    }
+                ]
+            },
+            {
+                "id": "experience",
+                "tier": "details",
+                "eyebrow": "The experience",
+                "title": "The installation",
+                "blocks": [
+                    {
+                        "type": "image",
+                        "src": "/assets/project3.3.png",
+                        "alt": "A person walks across a floor projection of glowing blue and violet particles in a dim studio.",
+                        "caption": "Process work: experimenting with particle styles on the projected floor."
+                    },
+                    {
+                        "type": "text",
+                        "text": "The idea was to make it feel as if you're swimming through water. The particles were designed to look like water bubbles, and the sound is an ocean wave crashing onto the shore. As people move, the bubbles swirl and part around them and the soundscape shifts with them. Pairing organic motion with calming sound creates a small digital piece of nature: a place to pause, breathe and play."
+                    }
+                ]
+            },
+            {
+                "id": "loop",
+                "tier": "details",
+                "eyebrow": "Information architecture",
+                "title": "Interaction model",
+                "blocks": [
+                    {
+                        "type": "text",
+                        "text": "The whole experience is built around a single loop between the body, the visuals and the sound. There are no menus, modes or goals, so the structure stays simple enough to understand without being told: you move, the room responds, and you move again."
+                    },
+                    {
+                        "type": "flow",
+                        "steps": [
+                            { "name": "You move", "note": "Walk, reach or gesture anywhere on the floor" },
+                            { "name": "The Kinect senses you", "note": "Depth tracking picks out your body in the space" },
+                            { "name": "TouchDesigner reads the motion", "note": "Movement data is translated in real time" },
+                            { "name": "The room responds", "note": "Particles flow around you and the sound shifts" },
+                            { "name": "You see it, hear it, move again", "note": "And the loop continues" }
+                        ]
+                    },
+                    {
+                        "type": "image",
+                        "src": "/assets/project3.1.png",
+                        "alt": "Close-up of cyan particles on a dark floor, scattering around the shadows of hands and arms.",
+                        "caption": "Every movement leaves a ripple: particles part around hands and feet the moment they move."
+                    }
+                ]
+            },
+            {
+                "id": "principles",
+                "tier": "details",
+                "eyebrow": "Information architecture",
+                "title": "Design principles",
+                "blocks": [
+                    {
+                        "type": "list",
+                        "items": [
+                            {
+                                "title": "No instructions needed",
+                                "text": "Nothing to read and nothing to learn. Simply walking in is enough to start."
+                            },
+                            {
+                                "title": "Instant cause and effect",
+                                "text": "Every movement gets an immediate, visible and audible response, so people understand the system by using it."
+                            },
+                            {
+                                "title": "Open to every body",
+                                "text": "Simple, full-body movement replaces precise control, so people of different abilities can take part."
+                            },
+                            {
+                                "title": "Calm by design",
+                                "text": "Water-like motion and ambient sound keep the experience soothing rather than overwhelming."
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "research",
+                "tier": "details",
+                "eyebrow": "Research",
+                "title": "Background research",
+                "blocks": [
+                    {
+                        "type": "quote",
+                        "text": "People move through environments unconsciously, often unaware of how their actions affect the world around them. Our system makes that visible and immediate."
+                    },
+                    {
+                        "type": "list",
+                        "columns": 3,
+                        "items": [
+                            {
+                                "title": "Escapism, done well",
+                                "text": "Structured, intentional escape can support emotional regulation and recovery rather than avoidance. Anup Bottu's TEDx talk on escapism vs. avoidance frames escape as a necessary cognitive break. Studies of simulated environments show responsive systems increase presence and agency, helping people feel grounded."
+                            },
+                            {
+                                "title": "Our butterfly effect",
+                                "text": "Small actions can lead to larger, unpredictable outcomes. Research in embodied cognition shows we understand the world through physical interaction, so turning even subtle movements into visible ripples makes people more aware of their presence and its impact."
+                            },
+                            {
+                                "title": "Flow theory",
+                                "text": "Mihaly Csikszentmihalyi's flow is a state of deep absorption fuelled by continuous, meaningful feedback. Immediate feedback, clear cause and effect and low cognitive load (Interaction Design Foundation) let people explore freely at their own pace."
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "system",
+                "tier": "details",
+                "eyebrow": "How it works",
+                "title": "Technical setup",
+                "blocks": [
+                    {
+                        "type": "text",
+                        "text": "The Kinect looks down on the floor and captures a depth image, where people show up as shapes against the ground. In TouchDesigner, that image is cleaned up to isolate bodies, then their movement is measured and used to push the particles and shape the sound, all in real time."
+                    },
+                    {
+                        "type": "gallery",
+                        "items": [
+                            {
+                                "src": "/assets/project3.2.png",
+                                "alt": "A greyscale depth image in TouchDesigner showing two people from above as dark shapes on a light floor.",
+                                "caption": "The Kinect's depth view, thresholded so bodies stand out from the floor."
+                            },
+                            {
+                                "src": "/assets/project3.4.png",
+                                "alt": "A TouchDesigner node network on a monitor, with connected operators and a cloud of pink particles.",
+                                "caption": "The TouchDesigner network that turns that movement into particles and sound."
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "iteration",
+                "tier": "background",
+                "eyebrow": "Process",
+                "title": "Testing and iteration",
+                "blocks": [
+                    {
+                        "type": "text",
+                        "text": "We broke the system into smaller parts and tested movement, visuals and sound separately to understand how each behaved. Through iterative testing, we refined how movement data controlled the particles and audio until the interaction felt responsive, intuitive and fluid."
+                    }
+                ]
+            },
+            {
+                "id": "reflection",
+                "tier": "background",
+                "eyebrow": "Reflection",
+                "title": "What I learned",
+                "blocks": [
+                    {
+                        "type": "list",
+                        "items": [
+                            {
+                                "title": "The challenge",
+                                "text": "Learning Kinect body tracking and translating that data into meaningful interaction, aligning the projection in the physical space, and keeping the system responsive across multiple inputs."
+                            },
+                            {
+                                "title": "How I worked through it",
+                                "text": "Breaking the system down, testing each part on its own, iterating constantly, troubleshooting with teammates, and reaching out for help with TouchDesigner when I needed it."
+                            }
+                        ]
+                    },
+                    {
+                        "type": "text",
+                        "text": "This project made me more confident working between physical and digital systems, and pushed me to think beyond functionality to how an environment can shape emotion, awareness and engagement. It reinforced the value of patience, iteration and adaptability, and showed me how challenges can lead to a more refined and meaningful experience."
+                    }
+                ]
+            },
+            {
+                "id": "next",
+                "tier": "background",
+                "eyebrow": "What's next",
+                "title": "Next steps",
+                "blocks": [
+                    {
+                        "type": "text",
+                        "text": "If expanded further, the system could be developed into a space that more intentionally helps people enter a flow state, deepening their sense of calm, awareness and immersion."
                     }
                 ]
             }

@@ -6,7 +6,8 @@
         "period": "2026",
         "blurb": "Every campus event from four separate organizers, gathered into one calendar Sheridan students can filter in seconds.",
         "planet": "planet_pink",
-        "thumbnail": "/assets/whatsnewsheridanprojects.svg"
+        "thumbnail": "/assets/whatsnewsheridanprojects.svg",
+        "thumbnailAlt": "Illustration of four event organizers, SSU, Sheridan Clubs, EDGE and Sheridan College, flowing into one What's New at Sheridan website."
     },
     {
         "id": "retro-radio-speaker",
@@ -15,14 +16,17 @@
         "period": "2026",
         "blurb": "An illustrated guide to the PRUNUS J-150 that labels its parts and gets a glamper listening in five simple steps.",
         "planet": "planet_lilac",
-        "thumbnail": "/assets/retroradioprojects.svg"
+        "thumbnail": "/assets/retroradioprojects.svg",
+        "thumbnailAlt": "Black and white line drawing of the PRUNUS J-150 retro radio with its antenna, solar panel, Bluetooth controls and tuning knob labelled."
     },
     {
-        "id": "project-three",
-        "name": "Project Three",
-        "tags": ["Branding", "Accessibility", "Placeholder"],
+        "id": "touch-design-and-data",
+        "name": "Touch: Design and Data",
+        "tags": ["Interactive Installation", "TouchDesigner", "Microsoft Kinect"],
         "period": "2026",
-        "blurb": "A short one or two sentence summary of the project will go here.",
-        "planet": "planet_blue"
+        "blurb": "An interactive floor that feels like swimming through water, with bubble-like particles and the sound of ocean waves.",
+        "planet": "planet_blue",
+        "thumbnail": "/assets/touchprojects.jpg",
+        "thumbnailAlt": "Top-down view of a projected floor where teal, bubble-like particles stream across dark tiles and part around a person standing on it."
     }
 ]

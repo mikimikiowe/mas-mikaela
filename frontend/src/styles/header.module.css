@@ -19,6 +19,7 @@
 }
 
 #logo_container {
+    min-width: 0;
     display: flex;
     align-items: center;
     border-radius: 100vh;
@@ -26,7 +27,8 @@
 
 #logo {
     height: 30px;
-    flex-shrink: 0;
+    max-width: 100%;
+    flex-shrink: 1;
     transition: filter .3s ease, scale .3s ease;
 }
 
@@ -64,6 +66,8 @@
 
     font-size: 1.125rem;
     letter-spacing: -0.0225rem;
+    /* capitals come from CSS so screen readers read words, not shouted letters */
+    text-transform: uppercase;
     color: var(--font-primary);
     text-decoration: none;
 
@@ -185,6 +189,18 @@
     .overlay.active {
         opacity: 1;
         pointer-events: auto;
+    }
+}
+
+/* small phones: a slimmer pill so the logo and menu button always fit side by side */
+@media (max-width: 400px) {
+    #nav {
+        gap: 0.75rem;
+        padding: 0.8rem 1.1rem;
+    }
+
+    #logo {
+        height: 24px;
     }
 }
 

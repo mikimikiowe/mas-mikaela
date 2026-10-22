@@ -63,14 +63,15 @@ function Home() {
                 <div id={styles.hero_text}>
                     <h1 id={styles.name}>Mikaela Olarte</h1>
                     <p id={styles.tagline}>
-                        this is{" "}
-                        <span className={styles.mas} tabIndex={0}>
+                        yup, there's{" "}
+                        {/* the definition is read as a description on focus, not repeated in the sentence */}
+                        <span className={styles.mas} tabIndex={0} aria-describedby="mas_definition">
                             más
-                            <span className={styles.mas_definition} role="tooltip">
+                            <span id="mas_definition" className={styles.mas_definition} aria-hidden="true">
                                 más <em>(adv.)</em>: Spanish for “more”
                             </span>
-                        </span>{" "}
-                        of me. <strong>más mikaela.</strong>
+                        </span>
+                        ! <strong>más mikaela<span className={styles.full_stop}>.</span></strong>
                     </p>
                     <p id={styles.intro}>
                         UX/UI Designer with accessibility in mind and founder of Women in Business and

@@ -80,14 +80,26 @@
         translate: none;
     }
 }
-@media (max-width: 480px) {
+/* phones: stack the logo over the icons, with room to breathe and clear of the home bar */
+@media (max-width: 600px) {
     #footer_nav {
+        flex-direction: column;
         justify-content: center;
-        padding: 20px 8px;
+        gap: 20px;
+        padding: 32px 8px calc(32px + env(safe-area-inset-bottom));
         text-align: center;
     }
 
     #logo_link {
         align-items: center;
+        gap: 8px;
+    }
+
+    #nav_list {
+        gap: 16px;
+    }
+
+    .nav_item a {
+        width: 44px;
     }
 }

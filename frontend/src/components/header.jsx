@@ -1,6 +1,6 @@
 import styles from '@styles/header.module.css';
 import { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 function Navbar() {
     const [toggled, setToggled] = useState(false);
@@ -27,7 +27,7 @@ function Navbar() {
         <nav id={styles.nav_container} className='section' aria-label="Main">
             <div id={styles.nav} data-toggled={toggled} className='glass_bg'>
                 <Link id={styles.logo_container} to="/" onClick={closeMenu} aria-label="Más Mikaela home">
-                    <img id={styles.logo} src="/assets/logo.svg" alt="" />
+                    <img id={styles.logo} src="/assets/logo.svg" alt="Más Mikaela logo" />
                 </Link>
                 <button
                     ref={burgerRef}
@@ -44,13 +44,14 @@ function Navbar() {
                 </button>
                 <ul id="nav_menu" className={styles.list}>
                     <li className={styles.list_item}>
-                        <Link to="/projects" onClick={closeMenu}>PROJECTS</Link>
+                        {/* NavLink marks the current page with aria-current="page" */}
+                        <NavLink to="/projects" onClick={closeMenu}>Projects</NavLink>
                     </li>
                     <li className={styles.list_item}>
-                        <Link to="/about" onClick={closeMenu}>ABOUT ME</Link>
+                        <NavLink to="/about" onClick={closeMenu}>About me</NavLink>
                     </li>
                     <li className={styles.list_item}>
-                        <Link to="/playground" onClick={closeMenu}>PLAYGROUND</Link>
+                        <NavLink to="/playground" onClick={closeMenu}>Playground</NavLink>
                     </li>
                 </ul>
             </div>
