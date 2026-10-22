@@ -665,11 +665,14 @@
 
 /* RAIL: the reading order, drawn as an inverted pyramid */
 
+/* pinned just below the sticky header, at the same height it starts at, so it stays put while scrolling */
 .rail {
     position: sticky;
-    top: 2rem;
+    top: 164px;
     align-self: start;
-    margin-top: 3.25rem;
+    max-height: calc(100vh - 184px);
+    overflow-y: auto;
+    scrollbar-width: none;
 }
 
 .rail_title {
