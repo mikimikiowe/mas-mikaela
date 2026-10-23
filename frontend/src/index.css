@@ -24,6 +24,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* in-page links stop just below the sticky nav instead of under it (the header measures its height) */
+html {
+  scroll-padding-top: calc(var(--nav-height, 100px) + 1rem);
+}
+
 html,
 body,
 #root {

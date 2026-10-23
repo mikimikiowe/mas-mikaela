@@ -33,24 +33,58 @@ function Preview({ preview }) {
     return <Laptop url={preview.url} title={preview.title} />;
 }
 
-// Highlights the section currently in the middle of the screen.
+// distance from the top of the page, ignoring the reveal's slide-in so unrevealed sections measure true
+function pageTop(element) {
+    let top = 0;
+    for (let node = element; node; node = node.offsetParent) top += node.offsetTop;
+    return top;
+}
+
+// Highlights the last section whose top has reached the spot just under the sticky nav,
+// which is exactly where a reading order link scrolls it to, so even short sections light up.
 function useActiveSection(ids) {
     const [active, setActive] = useState(ids[0]);
 
     useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                const visible = entries.find((entry) => entry.isIntersecting);
-                if (visible) setActive(visible.target.id);
-            },
-            { rootMargin: "-45% 0px -50% 0px" }
-        );
+        // near the bottom of the page a clicked section can't scroll all the way up, so remember the click
+        let clicked = null;
 
-        ids.forEach((id) => {
-            const element = document.getElementById(id);
-            if (element) observer.observe(element);
-        });
-        return () => observer.disconnect();
+        function update() {
+            const line = window.scrollY + parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop || 0) + 8;
+            let current = ids[0];
+            ids.forEach((id) => {
+                const element = document.getElementById(id);
+                if (element && pageTop(element) <= line) current = id;
+            });
+
+            const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+            setActive(atBottom && clicked ? clicked : current);
+        }
+
+        function handleClick(event) {
+            const link = event.target.closest?.('a[href^="#"]');
+            const id = link?.getAttribute("href").slice(1);
+            if (ids.includes(id)) clicked = id;
+        }
+
+        // any scrolling by hand lets the position decide again
+        function forgetClick() {
+            clicked = null;
+        }
+
+        update();
+        window.addEventListener("scroll", update, { passive: true });
+        window.addEventListener("resize", update);
+        window.addEventListener("hashchange", update);
+        document.addEventListener("click", handleClick);
+        ["wheel", "touchmove", "keydown"].forEach((type) => window.addEventListener(type, forgetClick, { passive: true }));
+        return () => {
+            window.removeEventListener("scroll", update);
+            window.removeEventListener("resize", update);
+            window.removeEventListener("hashchange", update);
+            document.removeEventListener("click", handleClick);
+            ["wheel", "touchmove", "keydown"].forEach((type) => window.removeEventListener(type, forgetClick));
+        };
     }, [ids]);
 
     return active;
@@ -258,6 +292,15 @@ function Section({ section }) {
     );
 }
 
+// the fade-in is for scrolling down the page, so a jump from the rail shows its section straight away
+function showSectionNow(id) {
+    const element = document.getElementById(id);
+    if (!element) return;
+    element.style.transition = "none";
+    element.style.opacity = "1";
+    element.style.translate = "0 0";
+}
+
 function Rail({ sections, active }) {
     return (
         <nav className={styles.rail} aria-label="On this page">
@@ -274,6 +317,7 @@ function Rail({ sections, active }) {
                                         <a
                                             href={`#${section.id}`}
                                             aria-current={active === section.id ? "location" : undefined}
+                                            onClick={() => showSectionNow(section.id)}
                                         >
                                             {/* plain section titles make the clearest map; the page's own top parts only have a label */}
                                             {section.title || section.eyebrow}
