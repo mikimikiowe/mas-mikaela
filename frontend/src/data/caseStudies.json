@@ -29,7 +29,7 @@
                 "blocks": [
                     {
                         "type": "quote",
-                        "text": "How might we reduce the effort it takes for Sheridan students to discover campus events that are relevant to them?"
+                        "text": "How might I reduce the effort it takes for Sheridan students to discover campus events that are relevant to them?"
                     },
                     {
                         "type": "text",
@@ -45,7 +45,7 @@
                 "blocks": [
                     {
                         "type": "text",
-                        "text": "We saw an opportunity to bring these sources together. The site pulls live event data from each organizer through an API we built by scraping their event pages, displays everything in one consistent format, and presents it in a single place. Students can narrow events by date, campus, organizer and time of day, see what's on this week at a glance, and add events straight to their calendar."
+                        "text": "I saw an opportunity to bring these sources together. The site pulls live event data from each organizer through an API I built by scraping their event pages, displays everything in one consistent format, and presents it in a single place. Students can narrow events by date, campus, organizer and time of day, see what's on this week at a glance, and add events straight to their calendar."
                     }
                 ]
             },
@@ -57,7 +57,7 @@
                 "blocks": [
                     {
                         "type": "text",
-                        "text": "Before designing anything, we mapped where each organizer published events and what kind of events they ran. Every source lived on a different platform, with its own layout and its own way of describing dates, places and times. There was no shared structure to build on, so we had to define one."
+                        "text": "Before designing anything, I mapped where each organizer published events and what kind of events they ran. Every source lived on a different platform, with its own layout and its own way of describing dates, places and times. There was no shared structure to build on, so I had to define one."
                     },
                     {
                         "type": "table",
@@ -851,6 +851,27 @@
                     {
                         "type": "text",
                         "text": "If expanded further, the system could be developed into a space that more intentionally helps people enter a flow state, deepening their sense of calm, awareness and immersion."
+                    }
+                ]
+            },
+            {
+                "id": "team",
+                "tier": "background",
+                "eyebrow": "Team",
+                "title": "My teammates",
+                "blocks": [
+                    {
+                        "type": "team",
+                        "members": [
+                            {
+                                "name": "Millie Dayaram",
+                                "linkedin": "https://www.linkedin.com/in/millie-dayaram/"
+                            },
+                            {
+                                "name": "Lennard Francis Tortola",
+                                "linkedin": "https://www.linkedin.com/in/lennard-francis-tortola-57111a289/"
+                            }
+                        ]
                     }
                 ]
             }

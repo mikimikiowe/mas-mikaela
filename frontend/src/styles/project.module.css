@@ -422,6 +422,25 @@
     color: var(--font-muted);
 }
 
+.team_link {
+    align-self: flex-start;
+    font-family: var(--secondary-font-family);
+    color: var(--font-muted);
+    text-decoration: none;
+}
+
+.team_link:hover {
+    color: var(--font-primary);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.team_link:focus-visible {
+    outline: 2px solid var(--accent-pink);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
 /* photos and screenshots of the work */
 
 .figure {

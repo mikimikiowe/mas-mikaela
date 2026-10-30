@@ -211,6 +211,27 @@ function Block({ block }) {
                 </ul>
             );
 
+        // teammates credited with a link to their linkedin
+        case "team":
+            return (
+                <ul className={styles.list}>
+                    {block.members.map((member) => (
+                        <li key={member.name}>
+                            <h4>{member.name}</h4>
+                            <a
+                                className={styles.team_link}
+                                href={member.linkedin}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label={`${member.name} on LinkedIn (opens in a new tab)`}
+                            >
+                                LinkedIn ↗
+                            </a>
+                        </li>
+                    ))}
+                </ul>
+            );
+
         case "image":
             return (
                 <figure className={styles.figure}>
