@@ -35,7 +35,8 @@ function BaseLayout() {
         <>
             <a href="#main" className="skip_link">Skip to main content</a>
             {/* lives here so the stars stay put while navigating between pages */}
-            <Starfield className="starfield" />
+            {/* case study pages keep the stars but drop the cursor interaction, so it doesn't distract from reading */}
+            <Starfield className="starfield" interactive={!/^\/projects\/[^/]+/.test(pathname)} />
             <Header />
             <main id="main" ref={mainRef} tabIndex={-1}>
                 <Outlet />

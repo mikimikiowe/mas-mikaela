@@ -5,8 +5,15 @@ const LINK_DISTANCE = 150;
 
 // Full-screen canvas of twinkling stars that drift with the cursor,
 // draw constellation lines near it, and throw the odd shooting star.
-function Starfield({ className }) {
+// Pass interactive={false} to keep the stars twinkling but ignore the cursor.
+function Starfield({ className, interactive = true }) {
     const canvasRef = useRef(null);
+    // read inside the animation loop, so switching pages doesn't restart the stars
+    const interactiveRef = useRef(interactive);
+
+    useEffect(() => {
+        interactiveRef.current = interactive;
+    }, [interactive]);
 
     useEffect(() => {
         const canvas = canvasRef.current;
@@ -54,6 +61,13 @@ function Starfield({ className }) {
 
         function draw(time) {
             ctx.clearRect(0, 0, width, height);
+
+            // ease the stars back to centre and drop the lines as soon as the cursor is switched off
+            if (!interactiveRef.current) {
+                pointer.active = false;
+                parallax.targetX = 0;
+                parallax.targetY = 0;
+            }
 
             parallax.x += (parallax.targetX - parallax.x) * 0.05;
             parallax.y += (parallax.targetY - parallax.y) * 0.05;
@@ -145,6 +159,7 @@ function Starfield({ className }) {
         }
 
         function handlePointerMove(event) {
+            if (!interactiveRef.current) return;
             pointer.x = event.clientX;
             pointer.y = event.clientY;
             pointer.active = event.pointerType !== "touch";
